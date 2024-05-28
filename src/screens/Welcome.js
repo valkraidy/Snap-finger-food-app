@@ -29,7 +29,7 @@ export default function Welcome({navigation}) {
           </Text>
 
           <Text style={{fontWeight:400,fontSize:hp('2.1%'),textAlign:'center',color:'black'}}> 
-          If you are new here create account
+          If you are new here sign up
       .</Text>
 
         </View> 

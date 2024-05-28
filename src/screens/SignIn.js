@@ -52,7 +52,7 @@ export default function Createaccount({navigation}) {
                 <TextInput
       style={{height: hp('6%'),
       color:'black',
-       borderColor: '#E2E4EA', 
+       borderColor: '#E3242B', 
        borderWidth: 1,
        height:hp('7%'),
        width: wp('80%'),
@@ -82,7 +82,7 @@ export default function Createaccount({navigation}) {
                 <TextInput
         style={{ height: 40,
           color:'black',
-           borderColor: '#E2E4EA',
+           borderColor: '#E3242B',
             borderWidth: 1,
             height:hp('7%'),
             width: wp('80%'),
@@ -126,13 +126,13 @@ export default function Createaccount({navigation}) {
             backgroundColor:'#E3242B',
             borderRadius:36}} 
         >
-          <Text style={{color:'#fff',textAlign:'center',top:hp ('2%'),fontSize:18,fontWeight:500}}>Sign In</Text>
+          <Text style={{color:'#fff',textAlign:'center',top:hp ('1.7%'),fontSize:18,fontWeight:500}}>Sign In</Text>
 
         </TouchableOpacity>
 
                 <TouchableOpacity 
                 onPress={()=> navigation.navigate("SignUp")}
-                style={{top:hp('2.5%')}}>
+                style={{top:hp('2.2%')}}>
                     <Text style={{fontSize:18,fontWeight:400}}>
                        Don't have an account? <Text style={{color:'#E3242B'}}> Sign Up </Text>
                     </Text>

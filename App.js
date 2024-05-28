@@ -22,7 +22,10 @@ import { TouchableOpacity  } from 'react-native';
 
         
 
-       
+         <Stack.Screen
+        name='Herosection'
+        component={Herosection}
+        options={{headerShown:false}}/>
       
         <Stack.Screen
         name='OnboardingOne'
@@ -64,12 +67,12 @@ import { TouchableOpacity  } from 'react-native';
         options={{ headerShown: false }}
         />
 
-        <Stack.Screen
+        {/* <Stack.Screen
         name='Herosection'
         component={Herosection}
         options={{headerShown:false}}
         
-        /> 
+        />  */}
 
 
         <Stack.Screen
