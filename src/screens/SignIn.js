@@ -117,7 +117,7 @@ export default function Createaccount({navigation}) {
 
             </View>
 
-            <View style={{justifyContent:'center',alignItems:'center',top: hp('50%')}}>
+            <View style={{justifyContent:'center',alignItems:'center',top: hp('46%')}}>
             <TouchableOpacity
             onPress={()=>navigation.navigate("Herosection")}
            

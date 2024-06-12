@@ -1,4 +1,4 @@
-import { TouchableOpacity  } from 'react-native';
+
   import { NavigationContainer } from '@react-navigation/native';
   import { createNativeStackNavigator } from '@react-navigation/native-stack';
   import OnboardingOne from './src/screens/OnboardingOne'
@@ -21,11 +21,7 @@ import { TouchableOpacity  } from 'react-native';
       <Stack.Navigator>
 
         
-
-         <Stack.Screen
-        name='Herosection'
-        component={Herosection}
-        options={{headerShown:false}}/>
+       
       
         <Stack.Screen
         name='OnboardingOne'
@@ -67,12 +63,12 @@ import { TouchableOpacity  } from 'react-native';
         options={{ headerShown: false }}
         />
 
-        {/* <Stack.Screen
+        <Stack.Screen
         name='Herosection'
         component={Herosection}
         options={{headerShown:false}}
         
-        />  */}
+        />  
 
 
         <Stack.Screen
@@ -81,7 +77,9 @@ import { TouchableOpacity  } from 'react-native';
         options={{ headerShown: false }}
         />
 
-       
+        
+        
+
      
      
        

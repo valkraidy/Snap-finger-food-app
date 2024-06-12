@@ -53,7 +53,7 @@ export default function Welcome({navigation}) {
             onPress={()=>navigation.navigate("SignIn")}  
             style={{height:hp('6%'),width:wp ('30%'),backgroundColor:'#FAFAFA',borderRadius:46,borderWidth:1,borderColor:'#E3242B'}} 
         >
-            <Text style={{color:'#E3242B',textAlign:'center',top:hp ('1.2%'),fontSize:hp('2.3%'),fontWeight:700}}>Login</Text>
+            <Text style={{color:'#E3242B',textAlign:'center',top:hp ('1.2%'),fontSize:hp('2.3%'),fontWeight:700}}>Sign In</Text>
         </TouchableOpacity>
 
 
