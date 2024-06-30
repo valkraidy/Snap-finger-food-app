@@ -4,11 +4,12 @@ import { FontAwesome } from '@expo/vector-icons';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { StatusBar } from 'expo-status-bar';
 import { Ionicons } from '@expo/vector-icons';
-
+//Swiping images
 const images = [
+      'https://cdn.pixabay.com/photo/2017/12/10/14/47/pizza-3010062_1280.jpg',
     'https://cdn.pixabay.com/photo/2014/10/19/20/59/hamburger-494706_1280.jpg',
     'https://cdn.pixabay.com/photo/2014/11/05/15/57/salmon-518032_960_720.jpg',
-    'https://cdn.pixabay.com/photo/2017/12/10/14/47/pizza-3010062_1280.jpg'
+  
 ];
 
 const data = [
@@ -52,7 +53,7 @@ const data = [
 const WIDTH = Dimensions.get('window').width;
 const HEIGHT = Dimensions.get('window').height;
 
-export default function Herosection() {
+export default function Herosection({navigation}) {
     const [imgActive, setImgActive] = useState(0);
 
     const onChange = (nativeEvent) => {
@@ -71,7 +72,13 @@ export default function Herosection() {
                     <View style={styles.header}>
                         <Text style={styles.headerText}>Hello Kraidy!</Text>
                         <TouchableOpacity>
-                            <FontAwesome name="user-circle-o" size={24} color="black" />
+
+                            <Image
+                            source={require('../images/profile.png')}
+                            
+                            
+                            />
+                            {/* <FontAwesome name="user-circle-o" size={24} color="black" /> */}
                         </TouchableOpacity>
                     </View>
 
@@ -106,10 +113,15 @@ export default function Herosection() {
                         </View>
                     </View>
 
+{/* Categories */}
+
                     <View style={styles.categoriesContainer}>
                         <Text style={styles.categoriesText}>Categories</Text>
                         <View style={styles.categoriesRow}>
-                            <TouchableOpacity>
+                            <TouchableOpacity
+                            onPress = {()=>navigation.navigate('Foods')}
+                            
+                            >
                                 <View style={styles.categoryItem}>
                                     <Image
                                         style={styles.categoryImage}
@@ -117,15 +129,19 @@ export default function Herosection() {
                                     />
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity>
+                            <TouchableOpacity
+                             onPress = {()=>navigation.navigate('Drinks')}
+                            >
                                 <View style={styles.categoryItem}>
                                     <Image
                                         style={styles.categoryImage}
-                                        source={require('../images/smoothie.jpg')}
+                                        source={require('../images/cola.jpg')}
                                     />
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity>
+                            <TouchableOpacity
+                             onPress = {()=>navigation.navigate('Pizzas')}
+                            >
                                 <View style={styles.categoryItem}>
                                     <Image
                                         style={styles.categoryImage}
@@ -133,7 +149,9 @@ export default function Herosection() {
                                     />
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity>
+                            <TouchableOpacity
+                             onPress = {()=>navigation.navigate('Smoothies')}
+                            >
                                 <View style={styles.categoryItem}>
                                     <Image
                                         style={styles.categoryImage}
@@ -212,12 +230,15 @@ const styles = StyleSheet.create({
         width: WIDTH,
         height: hp('28%'),
         marginTop: hp('3%'),
+         justifyContent:'center',
+        marginRight:100
     },
     sliderImage: {
         width: wp('80%'),
-        borderRadius: 40,
-        height: hp('22%'),
+        borderRadius: 30,
+        height: hp('20%'),
         marginHorizontal: wp('10%'),
+       
     },
     dotContainer: {
         position: 'absolute',

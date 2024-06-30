@@ -5,6 +5,7 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 import { StatusBar } from 'expo-status-bar'
 import { AntDesign } from '@expo/vector-icons';
 import { TextInput } from 'react-native';
+import MyTabs from './MyTabs';
 
 
 
@@ -119,7 +120,7 @@ export default function Createaccount({navigation}) {
 
             <View style={{justifyContent:'center',alignItems:'center',top: hp('46%')}}>
             <TouchableOpacity
-            onPress={()=>navigation.navigate("Herosection")}
+            onPress={()=>navigation.navigate("Home")}
            
             style={{height:hp('6.4%'),
             width:wp ('70%'),
@@ -140,6 +141,7 @@ export default function Createaccount({navigation}) {
             </View>
         </View>
       <StatusBar style='auto'/>
+           {/* </> */}
     </View>
   )
 }
