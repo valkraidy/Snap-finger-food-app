@@ -15,8 +15,8 @@ export default function Welcome({navigation}) {
         }}>
           <Image
             source ={require('../images/come.png')}
-             //style={{height:hp('11%'),width: wp('20%')}}
-             style={{top:hp('10%'),}}
+          
+             style={{top:hp('10%'),height:hp('61%'),width: wp('60%')}}
           /> 
 
         </View>

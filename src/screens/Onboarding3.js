@@ -30,7 +30,9 @@ export default function Onboarding2({ navigation }) {
           <View style={{ flexDirection: 'row', justifyContent: 'center', padding: 10, gap: 6,top:hp('32%') }}>
           <FontAwesome name="circle" size={8} color="#808080" />
           <FontAwesome name="circle" size={8} color="#808080" />
-          <FontAwesome name="circle" size={12} color="#E3242B" />
+          <FontAwesome name="circle" size={12} color="#E3242B" 
+          style={{top:'-0.4%'}} 
+          />
         </View>
         </View>
 

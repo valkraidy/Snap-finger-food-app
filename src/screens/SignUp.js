@@ -19,7 +19,7 @@ export default function Createaccount({navigation}) {
 
         <TouchableOpacity
         onPress={()=>navigation.navigate("Welcome")}
-         style={{top:hp('8%')}}>
+         style={{top:hp('6%'),left:15}}>
 
 <AntDesign name="arrowleft" size={26} color="black" /> 
 </TouchableOpacity>
@@ -43,7 +43,7 @@ export default function Createaccount({navigation}) {
 
 
             <View>
-                <Text style={{paddingBottom:('3%'),fontWeight:600}}>
+                <Text style={{paddingBottom:('3%'),fontWeight:600,fontSize:17}}>
                     Phone Number
                 </Text>
 
@@ -54,10 +54,11 @@ export default function Createaccount({navigation}) {
       color:'black',
        borderColor: '#E3242B', 
        borderWidth: 1,
-       height:hp('7%'),
+       height:hp('6%'),
        width: wp('80%'),
-       borderRadius:15,
-       paddingLeft: 30 
+       borderRadius:35,
+       paddingLeft: 30 ,
+       fontSize:20
    }}
   
         value={phoneNumber}
@@ -70,19 +71,20 @@ export default function Createaccount({navigation}) {
 
 
             <View>
-                <Text style={{fontWeight:600,paddingBottom:('3%')}}>
+                <Text style={{fontWeight:600,marginTop:15,fontSize:17}}>
                     Username
                 </Text>
-                <View style={{position:'relative',keyboard:'default'}}>
+                <View style={{position:'relative',keyboard:'default',marginTop:10,fontSize:17}}>
               
                     <TextInput
-            style={{ color:'#A7AEC1',
+            style={{
              borderColor: '#E3242B',
               borderWidth: 1,
-              height:hp('7%'),
+              height:hp('6%'),
               width: wp('80%'),
-              borderRadius:15,
+              borderRadius:35,
               paddingLeft: 30,
+              fontSize:20
               
              }}
       
@@ -102,23 +104,25 @@ export default function Createaccount({navigation}) {
             <View>
 
              
-                <Text style={{paddingBottom:('3%'),fontWeight:600}}>
+                <Text style={{marginTop:15,fontWeight:600,fontSize:17}}>
                     Password
                 </Text>
 
-                <View>
+                <View style={{marginTop:10}}>
 
 
                
                 <TextInput
         style={{ height: 40,
-          color:'#A7AEC1',
+         
            borderColor: '#E3242B',
             borderWidth: 1,
-            height:hp('7%'),
+            height:hp('6%'),
             width: wp('80%'),
-            borderRadius:15,
+            borderRadius:35,
             paddingLeft: 30,
+            fontSize:20
+            
            
 
            }}
@@ -128,6 +132,7 @@ export default function Createaccount({navigation}) {
         onChangeText={(text) => setPassword(text)}
         placeholder=""
         keyboardType='ascii-capable'
+          secureTextEntry={true}
       />
       </View>
 

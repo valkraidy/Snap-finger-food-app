@@ -20,7 +20,7 @@ export default function Createaccount({navigation}) {
 
         <TouchableOpacity
         onPress={()=>navigation.navigate("Welcome")}
-         style={{top:hp('8%')}}>
+         style={{top:hp('6%'),left:15}}>
 
 <AntDesign name="arrowleft" size={26} color="black" /> 
 </TouchableOpacity>
@@ -55,10 +55,11 @@ export default function Createaccount({navigation}) {
       color:'black',
        borderColor: '#E3242B', 
        borderWidth: 1,
-       height:hp('7%'),
+       height:hp('6%'),
        width: wp('80%'),
-       borderRadius:15,
-       paddingLeft: 30 
+       borderRadius:35,
+       paddingLeft: 30 ,
+       fontSize:20
    }}
   
         value={phoneNumber}
@@ -85,9 +86,9 @@ export default function Createaccount({navigation}) {
           color:'black',
            borderColor: '#E3242B',
             borderWidth: 1,
-            height:hp('7%'),
+            height:hp('6%'),
             width: wp('80%'),
-            borderRadius:15,
+            borderRadius:35,
             paddingLeft: 30,
             fontSize:20
            }}
@@ -95,7 +96,8 @@ export default function Createaccount({navigation}) {
         value={password}
         onChangeText={(text) => setPassword(text)}
         placeholder=""
-        keyboardType='phone-pad'
+        keyboardType='default'
+          secureTextEntry={true}
       />
       </View>
 
@@ -120,7 +122,7 @@ export default function Createaccount({navigation}) {
 
             <View style={{justifyContent:'center',alignItems:'center',top: hp('46%')}}>
             <TouchableOpacity
-            onPress={()=>navigation.navigate("Home")}
+            onPress={()=>navigation.navigate("MyTabs")}
            
             style={{height:hp('6.4%'),
             width:wp ('70%'),

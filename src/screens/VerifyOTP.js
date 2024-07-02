@@ -20,7 +20,7 @@ export default function Createaccount({navigation}) {
 
             <TouchableOpacity
             onPress={()=>navigation.navigate("SignUp")}
-            style={{top:hp('8%')}}>
+            style={{top:hp('6%'),left:15}}>
 
             <AntDesign name="arrowleft" size={26} color="black" /> 
             </TouchableOpacity>
@@ -48,10 +48,11 @@ export default function Createaccount({navigation}) {
                     color:'black',
                     borderColor: '#E3242B', 
                     borderWidth: 1,
-                    height:hp('8%'),
+                    height:hp('7%'),
                     width: wp('12%'),
                     borderRadius:30,
-                    paddingLeft:20
+                    paddingLeft:20,
+                      fontSize:20
                     }}
   
                     value={phoneNumber}
@@ -59,52 +60,43 @@ export default function Createaccount({navigation}) {
                     keyboardType='phone-pad'
                 />
             </View>
-
-
-            <View>
-               
-               <TextInput
-                    style={{height: hp('6%'),
-                    color:'black',
-                    borderColor: '#E3242B', 
-                    borderWidth: 1,
-                    height:hp('8%'),
-                    width: wp('12%'),
-                    borderRadius:30,
-                    paddingLeft:20
-                    
-                   
-                    }}
- 
-                    value={phoneNumber}
-                    onChangeText={(text) => setPhoneNumber(text)}
-                    keyboardType='phone-pad'
-                    placeholder=''
-                />
-            </View>
-               
             
             <View style={{position:'relative',keyboard:'default'}}>
               
                 <TextInput
-                    style={{ color:'#A7AEC1',
+                    style={{ color:'#000',
                     borderColor: '#E3242B',
                     borderWidth: 1,
-                    height:hp('8%'),
+                    height:hp('7%'),
                     width: wp('12%'),
                     borderRadius:30,
-                    paddingLeft:20
+                    paddingLeft:20,
+                    fontSize:20
+                    }}
+
+                    placeholder=""
+                    keyboardType='phone-pad'
+                />
+            </View>
+               
+
+                 <View style={{position:'relative',keyboard:'default'}}>
+              
+                <TextInput
+                    style={{ color:'#000',
+                    borderColor: '#E3242B',
+                    borderWidth: 1,
+                    height:hp('7%'),
+                    width: wp('12%'),
+                    borderRadius:30,
+                    paddingLeft:20,
+                      fontSize:20
                     
                     }}
-            
-                    value={fullName}
-                    onChangeText={(text) => setFullName(text)}
+
                     placeholder=""
-                    keyboardType='default'
+                    keyboardType='phone-pad'
                 />
-
-
-
             </View>
                
         
@@ -113,20 +105,20 @@ export default function Createaccount({navigation}) {
               
                 <TextInput
                     style={{ height: 40,
-                    color:'#A7AEC1',
+                    color:'#000',
                     borderColor: '#E3242B',
                     borderWidth: 1,
-                    height:hp('8%'),
+                    height:hp('7%'),
                     width: wp('12%'),
                     borderRadius:30,
-                    paddingLeft:20
+                    paddingLeft:20,
+                      fontSize:20
                   
                          }}
-                    value={password}
-                    onChangeText={(text) => setPassword(text)}
+                   
 
                   
-                    keyboardType='ascii-capable'
+                    keyboardType='phone-pad'
                 />
                
             </View>
@@ -144,7 +136,7 @@ export default function Createaccount({navigation}) {
 
             <View style={{justifyContent:'center',alignItems:'center',top: hp('55%')}}>
                 <TouchableOpacity
-                    onPress = {()=>navigation.navigate("Herosection")}
+                    onPress = {()=>navigation.navigate("MyTabs")}
 
                     style={{height:hp('6.4%'),
                     width:wp ('70%'),
