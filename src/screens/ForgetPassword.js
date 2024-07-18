@@ -5,6 +5,7 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 import { StatusBar } from 'expo-status-bar'
 import { AntDesign } from '@expo/vector-icons';
 import { TextInput } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
 
 
@@ -18,46 +19,56 @@ export default function Createaccount({navigation}) {
         <View>
 
         <TouchableOpacity
-        onPress={()=>navigation.navigate("Welcome")}
-         style={{top:hp('8%')}}>
+        onPress={()=>navigation.navigate("SignIn")}
+         style={{top:hp('4%')}}>
 
 <AntDesign name="arrowleft" size={26} color="black" /> 
 </TouchableOpacity>
 
         
 
-        <View style={{top:hp('13%'),justifyContent:'center',alignItems:'center'}}>
-            <Text style={{fontSize:24,fontWeight:700}}> 
+        <View style={{top:hp('7%'),justifyContent:'center',alignItems:'center'}}>
+            <Text style={{fontSize:24,fontWeight:700,fontFamily:'serif'}}> 
            Password Recovery
             </Text>
 
-            <Text style={{fontSize:20,fontWeight:400,color:'black',textAlign:'center'}}>
-           Please enter your phone number to recover your password
+            <Text style={{fontSize:20,fontWeight:400,color:'black',textAlign:'center',fontFamily:'serif'}}>
+           Please enter your phone number to recover your password.
              
             </Text>
 
 
             </View>
 
-            <View style={{top: hp('26%'),alignItems:'center'}}>
+            <View style={{top: hp('15%'),alignItems:'center'}}>
 
 
             <View>
-                <Text style={{paddingBottom:('3%'),fontWeight:600,fontSize:17}}>
+                <Text style={{fontFamily:'serif',paddingBottom:('3%'),fontWeight:600,fontSize:17}}>
                     Phone Number
                 </Text>
 
                 <View>
+                    <Ionicons name="call-outline" size={24} color="#E3242B"
+                    
+                    style={{
+                  position:'absolute',
+                  left:10,
+                      top:hp('1%'),
+                  width: 25,
+                }}
+                    />
                
                 <TextInput
-      style={{height: hp('6%'),
+      style={{
       color:'black',
-       borderColor: '#E2E4EA', 
+       borderColor: '#E3242B', 
        borderWidth: 1,
-       height:hp('7%'),
+       height:hp('6%'),
        width: wp('80%'),
-       borderRadius:15,
-       paddingLeft: 30 
+       borderRadius:35,
+       paddingLeft: 50 ,
+        fontSize:20
    }}
   
         value={phoneNumber}
@@ -84,7 +95,7 @@ export default function Createaccount({navigation}) {
             backgroundColor:'#E3242B',
             borderRadius:36}} 
         >
-          <Text style={{color:'#fff',textAlign:'center',top:hp ('1.7%'),fontSize:18,fontWeight:500}}>Get Started</Text>
+          <Text style={{fontFamily:'serif',color:'#fff',textAlign:'center',top:hp ('1.7%'),fontSize:18,fontWeight:500}}>Get Started</Text>
 
         </TouchableOpacity>
 

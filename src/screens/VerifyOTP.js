@@ -28,11 +28,11 @@ export default function Createaccount({navigation}) {
         
 
         <View style={{top:hp('10%'),justifyContent:'center',alignItems:'center'}}>
-            <Text style={{fontSize:24,fontWeight:700}}> 
+            <Text style={{fontFamily:'serif',fontSize:24,fontWeight:700}}> 
               Verify OTP
             </Text>
 
-            <Text style={{fontSize:18,fontWeight:400,color:'black',textAlign:'center'}}>
+            <Text style={{fontFamily:'serif',fontSize:18,fontWeight:400,color:'black',textAlign:'center'}}>
             Your Pass Code Has Been Sent To
              +233241482993
             </Text>
@@ -126,8 +126,8 @@ export default function Createaccount({navigation}) {
            
         </View>
 
-        <View style={{flex:1,fontSize:24,top:hp('25%',)}}>
-            <Text style={{textAlign:'center',fontSize:17}}>
+        <View style={{fontSize:24,top:hp('25%',)}}>
+            <Text style={{fontFamily:'serif',textAlign:'center',fontSize:17}}>
                 Didn't recieve any code? <Text style={{color:'#E3242B'}}> Resend (2s) </Text>
             </Text>
         </View>
@@ -143,7 +143,7 @@ export default function Createaccount({navigation}) {
                     backgroundColor:'#E3242B',
                     borderRadius:36}} 
                 >
-                      <Text style={{color:'#fff',textAlign:'center',top:hp ('2%'),fontSize:18,fontWeight:500}}>Get Started</Text>
+                      <Text style={{fontFamily:'serif',color:'#fff',textAlign:'center',top:hp ('2%'),fontSize:18,fontWeight:500}}>Get Started</Text>
 
                 </TouchableOpacity>
 

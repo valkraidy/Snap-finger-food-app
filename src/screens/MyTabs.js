@@ -33,9 +33,10 @@ export default function MyTabs() {
         },
         tabBarActiveTintColor: '#E3242B',
         tabBarInactiveTintColor: '#000',
+        tabBarHideOnKeyboard:false
       })}
     >
-      <Tab.Screen name="Home" component={Home} options={{ headerShown: false }} />
+      <Tab.Screen name="Home" component={Home} options={{ headerShown: false ,tabBarHideOnKeyboard:false}} />
       <Tab.Screen name="Meals" component={Meals} options={{ headerShown: false }} />
       <Tab.Screen name="Settings" component={Settings} options={{ headerShown: false }}/>
       <Tab.Screen name="Profile" component={Profile} options={{ headerShown: false }}/>

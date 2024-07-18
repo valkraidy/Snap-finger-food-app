@@ -23,8 +23,8 @@ export default function Onboarding2({ navigation }) {
          <View style={{position:'absolute',left: 0, right: 0, alignItems: "center"}}>
         <View style={{ flex: 1, alignItems: 'center', top: hp('34%'),textAlign: 'center' }}>
          
-          <Text style={{ fontSize: hp('4.8%'), fontWeight: '700', top: hp('30%'), color: 'white' ,justifyContent:'center',alignItems:'center',textAlign: 'center'}}>Order now {'\n'}and dig in!!!</Text>
-          <Text style={{ fontWeight: '500', fontSize: hp('2.5%'), top: hp('32%'), textAlign: 'center', color: '#fff' }}>Craving satisfied, delivered fast.</Text>
+          <Text style={{fontFamily:'serif', fontSize: hp('4.8%'), fontWeight: '700', top: hp('30%'), color: 'white' ,justifyContent:'center',alignItems:'center',textAlign: 'center'}}>Order now {'\n'}and dig in!!!</Text>
+          <Text style={{fontFamily:'serif', fontWeight: '500', fontSize: hp('2.5%'), top: hp('32%'), textAlign: 'center', color: '#fff' }}>Craving satisfied, delivered fast.</Text>
          
 
           <View style={{ flexDirection: 'row', justifyContent: 'center', padding: 10, gap: 6,top:hp('32%') }}>
@@ -44,7 +44,7 @@ export default function Onboarding2({ navigation }) {
             style={{ height: hp('6%'), width: wp('80%'), backgroundColor: '#E3242B', borderRadius: 46 }}
             onPress={() => navigation.navigate("Welcome")}
           >
-            <Text style={{ color: '#fff', textAlign: 'center', top: hp('1.4%'), fontSize: hp('2.5%'), fontWeight: '700' }}>Get Started</Text>
+            <Text style={{fontFamily:'serif', color: '#fff', textAlign: 'center', top: hp('1.4%'), fontSize: hp('2.5%'), fontWeight: '700' }}>Get Started</Text>
           </TouchableOpacity>
 
           

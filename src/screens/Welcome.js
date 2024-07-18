@@ -25,10 +25,10 @@ export default function Welcome({navigation}) {
         top:hp('-23%')
         }}>
 
-          <Text style={{fontSize: hp('3.5%'),fontWeight:700,}}> Welcome to Snap finger
+          <Text style={{fontFamily:'serif',fontSize: hp('3.5%'),fontWeight:700,}}> Welcome to Snap finger
           </Text>
 
-          <Text style={{fontWeight:400,fontSize:hp('2.1%'),textAlign:'center',color:'black'}}> 
+          <Text style={{fontFamily:'serif',fontWeight:400,fontSize:hp('2.1%'),textAlign:'center',color:'black'}}> 
           If you are new here sign up
       .</Text>
 
@@ -46,24 +46,16 @@ export default function Welcome({navigation}) {
             onPress={()=>navigation.navigate("SignUp")}  
             style={{height:hp('6%'),width:wp ('30%'),backgroundColor:'#E3242B',borderRadius:46}} 
         >
-            <Text style={{color:'#fff',textAlign:'center',top:hp ('1.4%'),fontSize:hp('2.3%'),fontWeight:700}}>Sign Up</Text>
+            <Text style={{fontFamily:'serif',color:'#fff',textAlign:'center',top:hp ('1.4%'),fontSize:hp('2.3%'),fontWeight:700}}>Sign Up</Text>
         </TouchableOpacity>
 
         <TouchableOpacity 
             onPress={()=>navigation.navigate("SignIn")}  
             style={{height:hp('6%'),width:wp ('30%'),backgroundColor:'#FAFAFA',borderRadius:46,borderWidth:1,borderColor:'#E3242B'}} 
         >
-            <Text style={{color:'#E3242B',textAlign:'center',top:hp ('1.2%'),fontSize:hp('2.3%'),fontWeight:700}}>Sign In</Text>
+            <Text style={{fontFamily:'serif',color:'#E3242B',textAlign:'center',top:hp ('1.2%'),fontSize:hp('2.3%'),fontWeight:700}}>Sign In</Text>
         </TouchableOpacity>
 
-
-
-        {/* <TouchableOpacity
-          onPress={() =>navigation.navigate("SignIn")} 
-        >
-        
-          <Text style={{color:'#E3242B',textAlign:'center',fontSize:hp('2.5%'),fontWeight:700,top:hp('2%')}}>Login</Text>
-        </TouchableOpacity> */}
         </View>
       
       <StatusBar style='auto'/>

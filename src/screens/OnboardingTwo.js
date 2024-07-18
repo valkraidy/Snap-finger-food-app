@@ -5,7 +5,7 @@ import { FontAwesome } from '@expo/vector-icons';
 
 export default function Onboarding2({ navigation }) {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1 ,fontFamily:'serif'}}>
       <ImageBackground
         source={require('../images/onboard.jpg')}
         style={{
@@ -25,8 +25,8 @@ export default function Onboarding2({ navigation }) {
          <View style={{position:'absolute',left: 0, right: 0, alignItems: "center"}}>
         <View style={{ flex: 1, alignItems: 'center', top: hp('34%'),textAlign: 'center' }}>
          
-          <Text style={{ fontSize: hp('4.1%'), fontWeight: '700', top: hp('31%'), color: 'white' ,justifyContent:'center',alignItems:'center',textAlign: 'center'}}>Thinking of{'\n'} what to eat?</Text>
-          <Text style={{ fontWeight: '500', fontSize: hp('2.5%'), top: hp('34%'), textAlign: 'center', color: '#fff' }}>  Get started with easy ordering!</Text>
+          <Text style={{fontFamily:'serif', fontSize: hp('4.1%'), fontWeight: '700', top: hp('31%'), color: 'white' ,justifyContent:'center',alignItems:'center',textAlign: 'center'}}>Thinking of{'\n'} what to eat?</Text>
+          <Text style={{fontFamily:'serif', fontWeight: '500', fontSize: hp('2.5%'), top: hp('34%'), textAlign: 'center', color: '#fff' }}>  Get started with easy ordering!</Text>
          
 
 
@@ -44,14 +44,14 @@ export default function Onboarding2({ navigation }) {
         {/* TouchableOpacity */}
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center',top:hp('68%') }}>
           <TouchableOpacity
-            style={{ height: hp('6%'), width: wp('80%'), backgroundColor: '#E3242B', borderRadius: 46 }}
+            style={{ height: hp('5.5%'), width: wp('80%'), backgroundColor: '#E3242B', borderRadius: 46 }}
             onPress={() => navigation.navigate("Onboarding3")}
           >
-            <Text style={{ color: '#fff', textAlign: 'center', top: hp('1.4%'), fontSize: hp('2.5%'), fontWeight: '700' }}>Next</Text>
+            <Text style={{fontFamily:'serif', color: '#fff', textAlign: 'center', top: hp('1.1%'), fontSize: hp('2.5%'), fontWeight: '700' }}>Next</Text>
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => navigation.navigate("Welcome")}>
-            <Text style={{ color: '#E3242B', textAlign: 'center', top: hp('2%'), fontSize: hp('2.5%'), fontWeight: '700' }}>Skip</Text>
+            <Text style={{fontFamily:'serif', color: '#E3242B', textAlign: 'center', top: hp('2%'), fontSize: hp('2.5%'), fontWeight: '700' }}>Skip</Text>
           </TouchableOpacity>
         </View>
         </View>

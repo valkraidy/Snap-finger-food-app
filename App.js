@@ -13,6 +13,7 @@ import Smoothies from './src/screens/Smoothies';
 import Pizzas from './src/screens/Pizzas';
 import Drinks from './src/screens/Drinks';
 import Foods from './src/screens/Foods';
+import Modal from './src/screens/Modal';
 
 const Stack = createNativeStackNavigator();
 
@@ -33,6 +34,7 @@ export default function App() {
         <Stack.Screen name="Pizzas" component={Pizzas} options={{ headerShown: false }} />
         <Stack.Screen name="Smoothies" component={Smoothies} options={{ headerShown: false }} />
         <Stack.Screen name="Foods" component={Foods} options={{ headerShown: false }} />
+        <Stack.Screen name="Modal" component={Modal} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

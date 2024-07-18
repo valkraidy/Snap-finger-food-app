@@ -26,8 +26,8 @@ export default function Onboarding2({ navigation }) {
          <View style={{position:"absolute", left: 0, right: 0, alignItems: "center"}}>
             <View style={{ flex: 1, alignItems: 'center', top: hp('34%'),textAlign: 'center' }}>
             
-              <Text style={{ fontSize: hp('4.8%'), fontWeight: '700', top: hp('28%'), color: 'white' ,justifyContent:'center',alignItems:'center',textAlign: 'center'}}>Hungry for {'\n'}convenience?</Text>
-              <Text style={{ fontWeight: '500', fontSize: hp('2.5%'), top: hp('30%'), textAlign: 'center', color: '#fff' }}>Order now for speedy delivery!</Text>
+              <Text style={{ fontFamily:'serif',fontSize: hp('4.8%'), fontWeight: '700', top: hp('28%'), color: 'white' ,justifyContent:'center',alignItems:'center',textAlign: 'center'}}>Hungry for {'\n'}convenience?</Text>
+              <Text style={{fontFamily:'serif', fontWeight: '500', fontSize: hp('2.5%'), top: hp('30%'), textAlign: 'center', color: '#fff' }}>Order now for speedy delivery!</Text>
             
 
               <View style={{ flexDirection: 'row', justifyContent: 'center', padding: 10, gap: 6,top:hp('31%')}}>
@@ -46,11 +46,11 @@ export default function Onboarding2({ navigation }) {
                 style={{ height: hp('6%'), width: wp('80%'), backgroundColor: '#E3242B', borderRadius: 46,alignContent:'center' }}
                 onPress={() => navigation.navigate("OnboardingTwo")}
               >
-                <Text style={{ color: '#fff', textAlign: 'center', top: hp('1.4%'), fontSize: hp('2.5%'), fontWeight: '700' }}>Next</Text>
+                <Text style={{fontFamily:'serif', color: '#fff', textAlign: 'center', top: hp('1.4%'), fontSize: hp('2.5%'), fontWeight: '700' }}>Next</Text>
               </TouchableOpacity>
 
               <TouchableOpacity onPress={() => navigation.navigate("Welcome")}>
-                <Text style={{ color: '#E3242B', textAlign: 'center', top: hp('2%'), fontSize: hp('2.5%'), fontWeight: '700' }}>Skip</Text>
+                <Text style={{fontFamily:'serif', color: '#E3242B', textAlign: 'center', top: hp('2%'), fontSize: hp('2.5%'), fontWeight: '700' }}>Skip</Text>
               </TouchableOpacity>
             </View>
         </View>

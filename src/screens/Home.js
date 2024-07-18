@@ -13,39 +13,39 @@ const images = [
 ];
 
 const data = [
-  {
-    id: 1,
-    title: "Hamburger",
-    imageUrl: 'https://cdn.pixabay.com/photo/2014/10/19/20/59/hamburger-494706_1280.jpg',
-    price: '12.00',
-    description: 'A juicy hamburger with fresh lettuce and tomatoes.'
-  },
+  // {
+  //   id: 1,
+  //   title: "Hamburger",
+  //   imageUrl: 'https://cdn.pixabay.com/photo/2014/10/19/20/59/hamburger-494706_1280.jpg',
+  //   price: '12.00',
+  //   description: 'A juicy hamburger with fresh lettuce and tomatoes.'
+  // },
   {
     id: 2,
     title: "Salmon",
     imageUrl: 'https://cdn.pixabay.com/photo/2014/11/05/15/57/salmon-518032_960_720.jpg',
-    price: '18.00',
+    price: '18',
     description: 'Freshly grilled salmon with a hint of lemon.'
   },
   {
     id: 3,
     title: "Pizza",
     imageUrl: 'https://cdn.pixabay.com/photo/2017/12/10/14/47/pizza-3010062_1280.jpg',
-    price: '15.00',
+    price: '15',
     description: 'Delicious pizza with a variety of toppings.'
   },
   {
     id: 4,
     title: "Coca cola",
     imageUrl: 'https://cdn.pixabay.com/photo/2015/01/08/04/16/box-592366_1280.jpg',
-    price: '10.00',
+    price: '10',
     description: 'Classic pasta with rich tomato sauce.'
   },
   {
     id: 5,
     title: "Assorted jollof",
     imageUrl: 'https://cdn.pixabay.com/photo/2014/01/09/10/14/kimchi-fried-rice-241051_1280.jpg',
-    price: '25.00',
+    price: '25',
     description: 'Tender steak cooked to perfection.'
   },
 ];
@@ -110,22 +110,22 @@ export default function Herosection({ navigation }) {
             <View style={styles.categoriesRow}>
               <TouchableOpacity onPress={() => navigation.navigate('Foods')}>
                 <View style={styles.categoryItem}>
-                  <Image style={styles.categoryImage} source={require('../images/jol.jpg')} />
+                  <Image style={styles.categoryImage} source={require('../images/FRC.jpeg')} />
                 </View>
               </TouchableOpacity>
               <TouchableOpacity onPress={() => navigation.navigate('Drinks')}>
                 <View style={styles.categoryItem}>
-                  <Image style={styles.categoryImage} source={require('../images/cola.jpg')} />
+                  <Image style={styles.categoryImage} source={require('../drinksImages/cancoke.jpeg')} />
                 </View>
               </TouchableOpacity>
               <TouchableOpacity onPress={() => navigation.navigate('Pizzas')}>
                 <View style={styles.categoryItem}>
-                  <Image style={styles.categoryImage} source={require('../images/pizza.jpg')} />
+                  <Image style={styles.categoryImage} source={require('../pizzaimages/CP.jpg')} />
                 </View>
               </TouchableOpacity>
               <TouchableOpacity onPress={() => navigation.navigate('Smoothies')}>
                 <View style={styles.categoryItem}>
-                  <Image style={styles.categoryImage} source={require('../images/c.jpg')} />
+                  <Image style={styles.categoryImage} source={require('../smoothiesimages/straw.jpeg')} />
                 </View>
               </TouchableOpacity>
             </View>
@@ -141,8 +141,10 @@ export default function Herosection({ navigation }) {
                     <Text style={styles.itemDescription}>{item.description}</Text>
                     <View style={styles.itemActions}>
                       <Ionicons name="add-circle-outline" size={24} color="black" />
-                      <TouchableOpacity style={styles.priceTag}>
-                        <Text style={styles.priceText}>{item.price}</Text>
+                      <TouchableOpacity 
+                      
+                      style={styles.priceTag}>
+                        <Text style={styles.priceText}>GHC {item.price}</Text>
                       </TouchableOpacity>
                     </View>
                   </View>
@@ -228,9 +230,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   categoriesText: {
-    fontSize: 18,
+    fontSize: 20,
     color: '#000',
-    fontWeight: 'bold',
+    fontWeight: '500',
   },
   categoriesRow: {
     flexDirection: 'row',
@@ -243,8 +245,8 @@ const styles = StyleSheet.create({
   },
   categoryImage: {
     borderRadius: 100,
-    height: 80,
-    width: 80,
+    height: 70,
+    width: 70,
   },
   itemsContainer: {
     marginTop: hp('5%'),
@@ -267,12 +269,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   itemTitle: {
-    fontSize: 18,
-    fontWeight: '700',
+    fontSize: 22,
+    fontWeight: '600',
   },
   itemDescription: {
-    fontSize: 13,
-    fontWeight: '600',
+    fontSize: 16,
+    fontWeight: '300',
     width: wp('55%'),
   },
   itemActions: {
