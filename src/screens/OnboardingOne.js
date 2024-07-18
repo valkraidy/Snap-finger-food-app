@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, View, TouchableOpacity, ImageBackground, StatusBar} from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { FontAwesome } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 
 export default function Onboarding2({ navigation }) {
   return (
@@ -41,16 +42,38 @@ export default function Onboarding2({ navigation }) {
            
 
             {/* TouchableOpacity */}
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center',top:hp('66%'),left:'auto',right:'auto' }}>
+            <View style={{ flex: 1
+              , justifyContent: 'center', alignItems: 'center',top:hp('66%'),
+              // left:70,
+              // right:40,
+              flexDirection:'row',justifyContent:'space-between'}}>
+
+                 <View style={{flexDirection:'row'}}>
               <TouchableOpacity
-                style={{ height: hp('6%'), width: wp('80%'), backgroundColor: '#E3242B', borderRadius: 46,alignContent:'center' }}
+                style={{
+                  left:hp('18%'),
+                  //  height: hp('6%'),
+                    //  width: wp('30%'),
+                    //  backgroundColor: '#E3242B',
+                      borderRadius: 46,alignContent:'center' }}
                 onPress={() => navigation.navigate("OnboardingTwo")}
               >
-                <Text style={{fontFamily:'serif', color: '#fff', textAlign: 'center', top: hp('1.4%'), fontSize: hp('2.5%'), fontWeight: '700' }}>Next</Text>
+                <Text style={{fontFamily:'serif', color: '#E3242B', textAlign: 'center', top: hp('0.3%'), fontSize: hp('4%'), fontWeight: '700' }}>Next</Text>
+              
               </TouchableOpacity>
+             <View>
+                <AntDesign name="arrowright" size={24} color="black" />
+                </View>
 
-              <TouchableOpacity onPress={() => navigation.navigate("Welcome")}>
-                <Text style={{fontFamily:'serif', color: '#E3242B', textAlign: 'center', top: hp('2%'), fontSize: hp('2.5%'), fontWeight: '700' }}>Skip</Text>
+              </View>
+                
+
+              <TouchableOpacity onPress={() => navigation.navigate("Welcome")}
+              style={{right:hp('22%')}}
+              >
+                <Text style={{fontFamily:'serif', color: '#fff', textAlign: 'center',
+                //  top: hp('1%'),
+                  fontSize: hp('3%'), fontWeight: '600' }}>Skip</Text>
               </TouchableOpacity>
             </View>
         </View>
