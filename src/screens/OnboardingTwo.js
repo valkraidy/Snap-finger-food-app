@@ -44,10 +44,10 @@ export default function Onboarding2({ navigation }) {
         {/* TouchableOpacity */}
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center',top:hp('68%') }}>
           <TouchableOpacity
-            style={{ height: hp('5.5%'), width: wp('80%'), backgroundColor: '#E3242B', borderRadius: 46 }}
+            style={{ height: hp('5%'), width: wp('80%'), backgroundColor: '#E3242B', borderRadius: 46 }}
             onPress={() => navigation.navigate("Onboarding3")}
           >
-            <Text style={{fontFamily:'serif', color: '#fff', textAlign: 'center', top: hp('1.1%'), fontSize: hp('2.5%'), fontWeight: '700' }}>Next</Text>
+            <Text style={{fontFamily:'serif', color: '#fff', textAlign: 'center', top: hp('1%'), fontSize: hp('2.5%'), fontWeight: '700' }}>Next</Text>
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => navigation.navigate("Welcome")}>

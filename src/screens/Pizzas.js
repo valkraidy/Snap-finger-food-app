@@ -235,11 +235,12 @@ const styles = StyleSheet.create({
   foodDescription: {
     fontSize: 18,
     textAlign: 'center',
-    marginVertical: 10
+    marginVertical: 10,
+     fontWeight: '300'
   },
   foodPrice: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: '400',
     marginVertical: 3
   },
   quantityContainer: {
@@ -248,7 +249,8 @@ const styles = StyleSheet.create({
     marginVertical: 5
   },
   quantityButton: {
-    padding: 10
+    padding: 10,
+    fontWeight: '300',
   },
   quantityText: {
     fontSize: 20,

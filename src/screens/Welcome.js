@@ -39,7 +39,7 @@ export default function Welcome({navigation}) {
         {/* TouchableOpacity */}
 
         <View style={{justifyContent:'center',alignItems:'center',
-         top: hp('-10%'),flexDirection:'row',gap:40
+         top: hp('-10%'),flexDirection:'row',gap:80
         }}>
 
         <TouchableOpacity 

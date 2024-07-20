@@ -176,11 +176,11 @@ export default function Foods({ navigation }) {
 
                   <View style={styles.quantityContainer}>
                     <TouchableOpacity onPress={decreaseQuantity} style={styles.quantityButton}>
-                      <AntDesign name="minus" size={24} color="black" />
+                     <AntDesign name="minuscircleo" size={24} color="black"/>
                     </TouchableOpacity>
                     <Text style={styles.quantityText}>{quantity}</Text>
                     <TouchableOpacity onPress={increaseQuantity} style={styles.quantityButton}>
-                      <AntDesign name="plus" size={24} color="black" />
+                     <Ionicons name="add-circle-outline" size={28} color="black" />
                     </TouchableOpacity>
                   </View>
 
@@ -234,11 +234,12 @@ const styles = StyleSheet.create({
   foodDescription: {
     fontSize: 18,
     textAlign: 'center',
-    marginVertical: 10
+    marginVertical: 10,
+    fontWeight: '300'
   },
   foodPrice: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: '400',
     marginVertical: 3
   },
   quantityContainer: {

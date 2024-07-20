@@ -23,7 +23,7 @@ export default function MyTabs() {
               iconName = focused ? 'pizza' : 'pizza-outline';
               break;
             case 'Settings':
-              iconName = focused ? 'settings' : 'settings-outline';
+              iconName = focused ? 'settings' : 'cart-outline';
               break;
             case 'Profile':
               iconName = focused ? 'person' : 'person-outline';

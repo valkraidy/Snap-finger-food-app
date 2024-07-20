@@ -25,11 +25,12 @@ export default function Foods({ navigation }) {
     },
     {
       id: 2,
-      image: require('../images/Noodles.jpeg'),
-      title: 'Noodles',
-      description: 'Indomie instant noodles serve with spices.',
-      price: 30.00
+      image: require('../drinksImages/cancoke.jpeg'),
+      title: 'Coca.Cola ',
+      description: ' A drink with a cola flavor made by the Coca-Cola Company..',
+      price: 10.00
     },
+   
     {
       id: 3,
       image: require('../images/JRC.jpeg'),
@@ -37,46 +38,54 @@ export default function Foods({ navigation }) {
       description: 'Tasty jollof rice with grilled chicken.',
       price: 50.00
     },
+
+
+
     {
       id: 4,
-      image: require('../images/AF.jpeg'),
-      title: 'Assorted Fried Rice',
-      description: 'Nice combination of vegetables, sausage, and gizzard.',
-      price: 50.00
+      image: require('../drinksImages/sprite.jpeg'),
+      title: 'Sprite 2L',
+      description: ' A lemon-lime soft drink clean taste that gives  refreshment..',
+      price: 40.00
     },
-    {
+    
+     {
       id: 5,
-      image: require('../images/MJRC.jpeg'),
-      title: 'Mega jollof & Chicken',
-      description: 'Jollof rice for two and two chicken',
-      price: 80.00
+      image: require('../images/Noodles.jpeg'),
+      title: 'Noodles',
+      description: 'Indomie instant noodles serve with spices.',
+      price: 30.00
     },
     {
       id: 6,
-      image: require('../images/MAFRC.jpg'),
-      title: 'Mega Assorted Fried Rice',
-      description: 'Assorted fried rice for two with a lot of vegetables',
-      price: 80.00
+      image: require('../drinksImages/Alvaro.jpg'),
+      title: 'Alvaro',
+      description: 'Alvaro offers a rich blend between malt-beer and fruit',
+      price: 15.00
     },
+
+
+
     {
       id: 7,
-      image: require('../images/BT.jpeg'),
-      title: 'Banku & Tilapia',
-      description: 'Two ball of banku and a medium size of Tilapia',
-      price: 150.00
+      image: require('../pizzaimages/PBb.jpeg'),
+      title: 'Pizza with Beef Big',
+      description: 'Bigger size of the pizza with spicy beef',
+      price: 250.00
     },
+    
     {
       id: 8,
-      image: require('../images/EFR.jpg'),
-      title: 'Egg Fried Rice',
-      description: 'Two ball of banku and a medium size of Tilapia',
-      price: 150.00
+      image: require('../smoothiesimages/grapes.jpeg'),
+      title: 'Grapes Smoothie',
+      description: 'Tasty smoothies made with natural grapes.',
+      price: 50.00
     },
     {
       id: 9,
-      image: require('../images/EFR.jpg'),
-      title: 'Egg Fried Rice',
-      description: 'Two ball of banku and a medium size of Tilapia',
+      image: require('../pizzaimages/PP.jpeg'),
+      title: 'Pepperoni Pizza ',
+      description: 'Nice pepperoni pizza with pepper ',
       price: 150.00
     },
     {
@@ -85,7 +94,57 @@ export default function Foods({ navigation }) {
       title: 'Egg Fried Rice',
       description: 'Two ball of banku and a medium size of Tilapia',
       price: 150.00
-    }
+    },
+     {
+      id: 11,
+      image: require('../drinksImages/cokezerosuger.jpeg'),
+      title: 'Coca Cola Zero Sugar 2L',
+      description: ' A drink with a cola flavor made by the Coca-Cola',
+      price: 40.00
+    },
+    {
+      id: 12,
+      image: require('../drinksImages/malt.jpg'),
+      title: 'Malta Guinness',
+      description: 'A unique and delicious Non-Alcoholic Malt Drink.',
+      price: 10.00
+    },
+      {
+      id: 13,
+      image: require('../pizzaimages/SP.jpeg'),
+      title: 'Sausage Pizza',
+      description: 'Pizza made with sausage and spices',
+      price: 100.00
+    },
+    {
+      id: 14,
+      image: require('../pizzaimages/vpizza.jpg'),
+      title: 'Vegetarian Pizza',
+      description: 'This is made for vegetarians and it is purely vege.',
+      price: 200.00
+    },
+    {
+      id: 15,
+      image: require('../smoothiesimages/apple.jpg'),
+      title: 'Apple smoothie',
+      description: 'Rich in natural sweet apple',
+      price: 50.00
+    },
+    {
+      id: 16,
+      image: require('../smoothiesimages/blue.jpg'),
+      title: 'Blueberry smoothie',
+      description: 'Sweet berries enrich in natural blueberries.',
+      price: 40.00
+    },
+    {
+      id: 17,
+      image: require('../pizzaimages/mrp.jpeg'),
+      title: 'Mushroom Pizza',
+      description: 'The pizza main ingredient is mushroom',
+      price: 150.00
+    },
+    
   ];
 
   const handleFoodPress = (food) => {
@@ -98,8 +157,6 @@ export default function Foods({ navigation }) {
     food.description.toLowerCase().includes(searchText.toLowerCase())
   
   );
-
-
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -131,7 +188,7 @@ export default function Foods({ navigation }) {
         {filteredFoods.map((food) => (
           <TouchableOpacity 
             key={food.id} 
-            style={{ ...styles.foodContainer, marginBottom: hp('2%') }}
+            style={{ ...styles.foodContainer, marginBottom: hp('4%') }}
             onPress={() => handleFoodPress(food)}
           >
             <View>
@@ -142,11 +199,11 @@ export default function Foods({ navigation }) {
             </View>
 
             <View>
-              <Text style={{ fontSize: 20, fontWeight: '700', top: hp('-0.8'), left: wp('3%') }}>
+              <Text style={{ fontSize: 20, fontWeight: '600', top: hp('-0.8'), left: wp('3%') }}>
                 {food.title}
               </Text>
 
-              <Text style={{ fontSize: 15, fontWeight: '600', width: wp('55%'), left: wp('3%'), top: hp('-1') }}>
+              <Text style={{ fontSize: 15, fontWeight: '300', width: wp('55%'), left: wp('3%'), top: hp('-1') }}>
                 {food.description}
               </Text>
 
@@ -177,11 +234,11 @@ export default function Foods({ navigation }) {
 
                   <View style={styles.quantityContainer}>
                     <TouchableOpacity onPress={decreaseQuantity} style={styles.quantityButton}>
-                      <AntDesign name="minus" size={24} color="black" />
+                     <AntDesign name="minuscircleo" size={24} color="black" />
                     </TouchableOpacity>
                     <Text style={styles.quantityText}>{quantity}</Text>
                     <TouchableOpacity onPress={increaseQuantity} style={styles.quantityButton}>
-                      <AntDesign name="plus" size={24} color="black" />
+                    <Ionicons name="add-circle-outline" size={30} color="black"/>
                     </TouchableOpacity>
                   </View>
 
@@ -235,11 +292,12 @@ const styles = StyleSheet.create({
   foodDescription: {
     fontSize: 18,
     textAlign: 'center',
-    marginVertical: 10
+    marginVertical: 10,
+      fontWeight: '300'
   },
   foodPrice: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: '400',
     marginVertical: 3
   },
   quantityContainer: {

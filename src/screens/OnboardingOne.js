@@ -44,36 +44,39 @@ export default function Onboarding2({ navigation }) {
             {/* TouchableOpacity */}
             <View style={{ flex: 1
               , justifyContent: 'center', alignItems: 'center',top:hp('66%'),
-              // left:70,
-              // right:40,
-              flexDirection:'row',justifyContent:'space-between'}}>
+               left:'auto',
+               right:'auto',
+            justifyContent:'space-between'}}>
 
-                 <View style={{flexDirection:'row'}}>
+                 <View>
+
+                  
               <TouchableOpacity
+
+
                 style={{
-                  left:hp('18%'),
-                  //  height: hp('6%'),
-                    //  width: wp('30%'),
-                    //  backgroundColor: '#E3242B',
+                 
+                   height: hp('5%'),
+                     width: wp('80%'),
+                   backgroundColor: '#E3242B',
                       borderRadius: 46,alignContent:'center' }}
                 onPress={() => navigation.navigate("OnboardingTwo")}
               >
-                <Text style={{fontFamily:'serif', color: '#E3242B', textAlign: 'center', top: hp('0.3%'), fontSize: hp('4%'), fontWeight: '700' }}>Next</Text>
+                
+                <Text style={{fontFamily:'serif', color: '#fff', textAlign: 'center', top: hp('0.6%'), fontSize: hp('2.5%'), fontWeight: '700' }}>Next  </Text>
               
               </TouchableOpacity>
-             <View>
-                <AntDesign name="arrowright" size={24} color="black" />
-                </View>
+            
 
               </View>
                 
 
               <TouchableOpacity onPress={() => navigation.navigate("Welcome")}
-              style={{right:hp('22%')}}
+            
               >
                 <Text style={{fontFamily:'serif', color: '#fff', textAlign: 'center',
-                //  top: hp('1%'),
-                  fontSize: hp('3%'), fontWeight: '600' }}>Skip</Text>
+                  top: hp('1%'),
+                  fontSize: hp('2.5%'), fontWeight: '600' }}>Skip</Text>
               </TouchableOpacity>
             </View>
         </View>
