@@ -160,6 +160,8 @@ export default function Foods({ navigation }) {
           </TouchableOpacity>
         ))}
 
+        
+{/* MODAL */}
         <Modal
           animationType="slide"
           transparent={true}

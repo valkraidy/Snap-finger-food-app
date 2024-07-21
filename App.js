@@ -1,5 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { CartProvider } from './src/screens/CartContext';
 import OnboardingOne from './src/screens/OnboardingOne';
 import OnboardingTwo from './src/screens/OnboardingTwo';
 import Onboarding3 from './src/screens/Onboarding3';
@@ -19,6 +20,7 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
+    <CartProvider>
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="OnboardingOne" component={OnboardingOne} options={{ headerShown: false }} />
@@ -37,5 +39,6 @@ export default function App() {
         <Stack.Screen name="Modal" component={Modal} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
+    </CartProvider>
   );
 }
