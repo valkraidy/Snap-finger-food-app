@@ -229,7 +229,7 @@ export default function Foods({ navigation }) {
               <View style={{ flexDirection: 'row' }}>
                 <Ionicons name="add-circle-outline" size={24} color="black" style={{ left: wp('3%') }} />
                 <View style={{ height: hp('3%'), width: wp('16%'), backgroundColor: '#E3242B', borderRadius: 20, justifyContent: 'center', alignItems: 'center', marginLeft: wp('5%') }}>
-                  <Text style={{ color: '#fff', fontWeight: '700' }}>{food.price}</Text>
+                  <Text style={{ color: '#fff', fontWeight: '700' }}>GHC {food.price}</Text>
                 </View>
               </View>
             </View>
@@ -261,7 +261,7 @@ export default function Foods({ navigation }) {
                     </TouchableOpacity>
                   </View>
 
-                  <TouchableOpacity style={styles.addToCartButton}  onPress={handleAddToCart}>
+                  <TouchableOpacity style={styles.addToCartButton}  onPress={handleAddToCart}  >
                     <Text style={styles.addToCartText}>Add to Cart</Text>
                   </TouchableOpacity>
 
@@ -300,7 +300,7 @@ const styles = StyleSheet.create({
   foodImage: {
     width: wp('100%'),
     height: hp('30%'),
-    borderRadius: 20,
+    borderRadius: 20 ,
     top:hp('-5%')
     // marginBottom: 10
   },

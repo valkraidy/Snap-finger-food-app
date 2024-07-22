@@ -1,16 +1,17 @@
 
-
 import React, { useState } from 'react';
-import { View, Text, TextInput, SafeAreaView, TouchableOpacity, Image, Modal, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, TextInput, SafeAreaView, TouchableOpacity, Image, Modal, ScrollView, StyleSheet,Alert } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { StatusBar } from 'expo-status-bar';
 import { EvilIcons, AntDesign, Feather, Ionicons } from '@expo/vector-icons';
+import { useCart } from './CartContext';
 
 export default function Foods({ navigation }) {
   const [modalVisible, setModalVisible] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [selectedFood, setSelectedFood] = useState(null);
   const [searchText, setSearchText] = useState('');
+    const { addToCart } = useCart();
 
   const increaseQuantity = () => setQuantity(quantity + 1);
   const decreaseQuantity = () => setQuantity(quantity > 1 ? quantity - 1 : 1);
@@ -87,6 +88,15 @@ export default function Foods({ navigation }) {
       price: 150.00
     }
   ];
+
+  //Handle Add to Cart
+
+   const handleAddToCart = () => {
+    addToCart(selectedFood);
+    setModalVisible(false);
+    Alert.alert('Success🎉🎊', 'Delicious pizza🍕 is added to cart');
+  };
+
 
   const handleFoodPress = (food) => {
     setSelectedFood(food);
@@ -187,7 +197,7 @@ export default function Foods({ navigation }) {
                     </TouchableOpacity>
                   </View>
 
-                  <TouchableOpacity style={styles.addToCartButton}>
+                  <TouchableOpacity style={styles.addToCartButton}  onPress={handleAddToCart}>
                     <Text style={styles.addToCartText}>Add to Cart</Text>
                   </TouchableOpacity>
 

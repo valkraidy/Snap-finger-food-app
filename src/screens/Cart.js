@@ -1,6 +1,5 @@
-// CartScreen.js
 import React from 'react';
-import { View, Text, FlatList, TouchableOpacity, Image, StyleSheet, SafeAreaView, ScrollView } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, Image, StyleSheet, SafeAreaView } from 'react-native';
 import { useCart } from './CartContext';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { AntDesign } from '@expo/vector-icons';
@@ -24,22 +23,21 @@ export default function CartScreen({ navigation }) {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <ScrollView contentContainerStyle={{ flexGrow: 1, paddingBottom: 20 }}>
-        <TouchableOpacity onPress={() => navigation.navigate("Home")} style={{ top: hp('3%'), left: 15 }}>
-          <AntDesign name="arrowleft" size={26} color="black" /> 
-        </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate("Home")} style={{ margin: 15 }}>
+        <AntDesign name="arrowleft" size={26} color="black" />
+      </TouchableOpacity>
 
-        <View style={{ padding: 10, top: hp('2.7%'), borderRadius: 5, flexDirection: 'row', alignItems: 'center' }}>
-          <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 10 }}>Cart</Text>
-        </View>
+      <View style={{ padding: 10, borderRadius: 5, flexDirection: 'row', alignItems: 'center' }}>
+        <Text style={{ fontSize: 24, fontWeight: 'bold' }}>Cart</Text>
+      </View>
 
-        <FlatList
-          data={cartItems}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id.toString()}
-          contentContainerStyle={{ paddingBottom: 20 }}
-        />
-      </ScrollView>
+      <FlatList
+        data={cartItems}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id.toString()}
+        contentContainerStyle={{ padding: 20 }}
+        ListFooterComponent={<View style={{ height: 20 }} />}  // to add bottom padding
+      />
     </SafeAreaView>
   );
 }
@@ -48,11 +46,11 @@ const styles = StyleSheet.create({
   itemContainer: {
     flexDirection: 'row',
     marginVertical: 10,
-    padding: 10,
+    padding: 5,
     backgroundColor: '#fff',
     borderRadius: 10,
     elevation: 2,
-    marginHorizontal: 20,
+    marginHorizontal: 10,
     alignItems: 'center'
   },
   itemImage: {
@@ -76,7 +74,7 @@ const styles = StyleSheet.create({
   },
   itemPrice: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: '400',
     color: '#E3242B'
   },
   removeButton: {
