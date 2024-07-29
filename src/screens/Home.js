@@ -180,9 +180,9 @@ const styles = StyleSheet.create({
   },
   headerText: {
     fontSize:30,
-    fontWeight: '800',
+    fontWeight: '600',
     color:"#E3242B",
-    top:hp('1%')
+    top:hp('2%')
     // fontStyle:'italic',
     
 
@@ -191,8 +191,8 @@ const styles = StyleSheet.create({
     marginTop: hp('3%'),
   },
   titleText: {
-    fontSize: wp('7%'),
-    fontWeight: '800',
+    fontSize: wp('4.5%'),
+    fontWeight: '400',
     color: '#E3242B',
   },
   highlight: {
@@ -230,7 +230,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   categoriesText: {
-    fontSize: 20,
+    fontSize: 25,
     color: '#000',
     fontWeight: '500',
   },
@@ -269,8 +269,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   itemTitle: {
-    fontSize: 22,
-    fontWeight: '600',
+    fontSize: 18,
+    fontWeight: '400',
   },
   itemDescription: {
     fontSize: 16,
