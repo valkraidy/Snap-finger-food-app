@@ -3,24 +3,41 @@ import React, { useState } from 'react';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { StatusBar } from 'expo-status-bar';
 import { AntDesign, Ionicons } from '@expo/vector-icons';
-import signUp from '../appwriteauth/signUp'; // Ensure the path is correct
+ import { Account, Client, ID } from 'appwrite';
+import { sendOTP } from '../appwriteauth/twilio';
 
-export default function Createaccount({ navigation }) {
-    const [userName, setUserName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
 
-    const handleSignUp = async () => {
+const client = new Client()
+    .setEndpoint('https://cloud.appwrite.io/v1') // Your API Endpoint
+     .setProject('669f868700200a22247f');                 // Your project ID
+
+const account = new Account(client);
+
+
+
+export default function SignUp({ navigation }) {
+    const [username, setUsername] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [generatedOtp, setGeneratedOtp] = useState('');
+
+
+     const handleSignUp = async () => {
         try {
-            await signUp(userName, email, password);
-            // Handle successful sign-up (e.g., navigate to another screen)
-            //   await sendOTPEmail(email);
-            navigation.navigate("MyTabs");
+            const response = await account.create(ID.unique(), phoneNumber, 'temporaryPassword', username); 
+            console.log('User signed up:', response);
+
+            // Send OTP
+            const otp = await sendOTP(phoneNumber);
+            setGeneratedOtp(otp);
+            navigation.navigate('VerifyOTP', { phoneNumber, generatedOtp: otp }); // Navigate to OTP verification screen
+
         } catch (error) {
-            // Handle error (e.g., show error message)
-            console.error('Error signing up:', error);
+            console.error('Sign-up failed:', error);
+            Alert.alert('Error', 'Sign-up failed. Please try again.');
         }
     };
+    
+
 
     return (
         <View style={{ flex: 1 }}>
@@ -44,7 +61,7 @@ export default function Createaccount({ navigation }) {
                 <View style={{ top: hp('20%'), alignItems: 'center' }}>
                     <View>
                         <Text style={{ fontWeight: '600', marginTop: 15, fontSize: 17, fontFamily: 'serif' }}>
-                            Username
+                         Phone Number
                         </Text>
                         <View style={{ position: 'relative', marginTop: 10 }}>
                             <AntDesign name="user" size={24} color="#E3242B"
@@ -65,17 +82,18 @@ export default function Createaccount({ navigation }) {
                                     paddingLeft: 50,
                                     fontSize: 17
                                 }}
-                                value={userName}
-                                onChangeText={setUserName}
+                                value={phoneNumber}
+                                onChangeText={setPhoneNumber}
                                 placeholder=""
-                                keyboardType='default'
+                               
+                                 keyboardType="phone-pad"
                             />
                         </View>
                     </View>
 
                     <View style={{ marginTop: 10 }}>
-                        <Text style={{ paddingBottom: '4%', fontWeight: '600', fontSize: 17, fontFamily: 'serif' }}>
-                            Email
+                        <Text style={{ paddingBottom: '2%', fontWeight: '600', fontSize: 17, fontFamily: 'serif' }}>
+                          Username
                         </Text>
                         <View>
                             <Ionicons name="mail-outline" size={24} color="#E3242B"
@@ -98,44 +116,15 @@ export default function Createaccount({ navigation }) {
                                     paddingLeft: 50,
                                     fontSize: 17
                                 }}
-                                value={email}
-                                onChangeText={setEmail}
-                                keyboardType='email-address'
+                                value={username}
+                                onChangeText={setUsername}
+                                 keyboardType='default'
+                                
                             />
                         </View>
                     </View>
 
-                    <View style={{ marginTop: 10 }}>
-                        <Text style={{ paddingBottom: '4%', fontWeight: '600', fontSize: 17, fontFamily: 'serif' }}>
-                            Password
-                        </Text>
-                        <View style={{ marginTop: 10 }}>
-                            <AntDesign name="lock1" size={24} color="#E3242B"
-                                style={{
-                                    position: 'absolute',
-                                    left: 10,
-                                    top: hp('1%'),
-                                    width: 20,
-                                    height: 30,
-                                }}
-                            />
-                            <TextInput
-                                style={{
-                                    
-                                    borderColor: '#E3242B',
-                                    borderWidth: 1,
-                                    height: hp('5%'),
-                                    width: wp('80%'),
-                                    borderRadius: 35,
-                                    paddingLeft: 50,
-                                    fontSize: 17
-                                }}
-                                value={password}
-                                onChangeText={setPassword}
-                                secureTextEntry={true}
-                            />
-                        </View>
-                    </View>
+                  
                 </View>
 
                 <View style={{ justifyContent: 'center', alignItems: 'center', top: hp('38%') }}>

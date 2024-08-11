@@ -20,7 +20,7 @@ export default function Createaccount({navigation}) {
 
         <TouchableOpacity
         onPress={()=>navigation.navigate("SignIn")}
-         style={{top:hp('4%')}}>
+         style={{top:hp('6%'),left: 15}}>
 
 <AntDesign name="arrowleft" size={26} color="black" /> 
 </TouchableOpacity>

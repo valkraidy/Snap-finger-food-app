@@ -1,4 +1,4 @@
-import { View, Text,TouchableOpacity,Image} from 'react-native'
+import { View, Text,TouchableOpacity} from 'react-native'
 import React from 'react'
 import { useState } from 'react';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
@@ -6,14 +6,41 @@ import { StatusBar } from 'expo-status-bar'
 import { AntDesign } from '@expo/vector-icons';
 import { TextInput } from 'react-native';
 
+import { Account, Client } from 'appwrite';
+
+const client = new Client()
+    .setEndpoint('https://cloud.appwrite.io/v1') // Your API Endpoint
+      .setProject('669f868700200a22247f');                // Your project ID
+
+const account = new Account(client);
 
 
+export default function VerifyOTP({ navigation, route }) {
+    const [otp, setOtp] = useState('');
+    const { phoneNumber, generatedOtp } = route.params;
 
-export default function Createaccount({navigation}) {
-    const [fullName, setFullName] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
-    const [password, setPassword] = useState('');
+    
+   
+
+    const handleVerifyOTP = async () => {
+        if (otp === generatedOtp.toString()) {
+            try {
+                // Create a session or just navigate to home if session is already created
+                await account.createSession(phoneNumber, otp);
+                Alert.alert('Success', 'OTP Verified. Redirecting to Home.');
+                navigation.navigate('Home'); // Navigate to Home page
+            } catch (error) {
+                console.error('Failed to verify OTP:', error);
+                Alert.alert('Error', 'Failed to verify OTP. Please try again.');
+            }
+        } else {
+            Alert.alert('Error', 'Invalid OTP. Please try again.');
+        }
+    };
+    
   return (
+
+
     <View style={{flex:1}}>
 
         <View>
@@ -27,7 +54,7 @@ export default function Createaccount({navigation}) {
 
         
 
-        <View style={{top:hp('10%'),justifyContent:'center',alignItems:'center'}}>
+          <View style={{top:hp('10%'),justifyContent:'center',alignItems:'center'}}>
             <Text style={{fontFamily:'serif',fontSize:24,fontWeight:700}}> 
               Verify OTP
             </Text>
@@ -41,89 +68,28 @@ export default function Createaccount({navigation}) {
 
         <View style={{top:hp('20%'),alignItems:'center',flexDirection:'row',justifyContent:'center',gap:20}}>
    
-            <View>
-               
-                <TextInput
-                    style={{height: hp('6%'),
-                    color:'black',
-                    borderColor: '#E3242B', 
+            <TextInput
+                style={{
+                    borderColor: '#E3242B',
                     borderWidth: 1,
-                    height:hp('7%'),
-                    width: wp('12%'),
-                    borderRadius:30,
-                    paddingLeft:20,
-                      fontSize:20
-                    }}
-  
-                    value={phoneNumber}
-                    onChangeText={(text) => setPhoneNumber(text)}
-                    keyboardType='phone-pad'
-                />
-            </View>
+                    height: hp('6%'),
+                    width: wp('80%'),
+                    borderRadius: 10,
+                    paddingLeft: 15,
+                    fontSize: 18,
+                    marginBottom: 20,
+                }}
+                value={otp}
+                onChangeText={setOtp}
+                keyboardType='numeric'
+                placeholder="Enter the OTP"
+            />
+
             
-            <View style={{position:'relative',keyboard:'default'}}>
-              
-                <TextInput
-                    style={{ color:'#000',
-                    borderColor: '#E3242B',
-                    borderWidth: 1,
-                    height:hp('7%'),
-                    width: wp('12%'),
-                    borderRadius:30,
-                    paddingLeft:20,
-                    fontSize:20
-                    }}
-
-                    placeholder=""
-                    keyboardType='phone-pad'
-                />
-            </View>
+          
                
 
-                 <View style={{position:'relative',keyboard:'default'}}>
               
-                <TextInput
-                    style={{ color:'#000',
-                    borderColor: '#E3242B',
-                    borderWidth: 1,
-                    height:hp('7%'),
-                    width: wp('12%'),
-                    borderRadius:30,
-                    paddingLeft:20,
-                      fontSize:20
-                    
-                    }}
-
-                    placeholder=""
-                    keyboardType='phone-pad'
-                />
-            </View>
-               
-        
-
-            <View>
-              
-                <TextInput
-                    style={{ height: 40,
-                    color:'#000',
-                    borderColor: '#E3242B',
-                    borderWidth: 1,
-                    height:hp('7%'),
-                    width: wp('12%'),
-                    borderRadius:30,
-                    paddingLeft:20,
-                      fontSize:20
-                  
-                         }}
-                   
-
-                  
-                    keyboardType='phone-pad'
-                />
-               
-            </View>
-
-           
         </View>
 
         <View style={{fontSize:24,top:hp('25%',)}}>
@@ -136,7 +102,7 @@ export default function Createaccount({navigation}) {
 
             <View style={{justifyContent:'center',alignItems:'center',top: hp('55%')}}>
                 <TouchableOpacity
-                    onPress = {()=>navigation.navigate("MyTabs")}
+                    onPress = {handleVerifyOTP}
 
                     style={{height:hp('6.4%'),
                     width:wp ('70%'),

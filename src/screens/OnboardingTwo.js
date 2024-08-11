@@ -47,11 +47,11 @@ export default function Onboarding2({ navigation }) {
             style={{ height: hp('5%'), width: wp('80%'), backgroundColor: '#E3242B', borderRadius: 46 }}
             onPress={() => navigation.navigate("Onboarding3")}
           >
-            <Text style={{fontFamily:'serif', color: '#fff', textAlign: 'center', top: hp('1%'), fontSize: hp('2.5%'), fontWeight: '700' }}>Next</Text>
+            <Text style={{fontFamily:'serif', color: '#fff', textAlign: 'center', top: hp('1%'), fontSize: hp('2.5%'), fontWeight: '600' }}>Next</Text>
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => navigation.navigate("Welcome")}>
-            <Text style={{fontFamily:'serif', color: '#E3242B', textAlign: 'center', top: hp('2%'), fontSize: hp('2.5%'), fontWeight: '700' }}>Skip</Text>
+            <Text style={{fontFamily:'serif', color: '#fff', textAlign: 'center', top: hp('2%'), fontSize: hp('2.5%'), fontWeight: '600' }}>Skip</Text>
           </TouchableOpacity>
         </View>
         </View>

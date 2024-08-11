@@ -2,24 +2,32 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, TextInput, Alert } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { StatusBar } from 'expo-status-bar';
-import { AntDesign, Ionicons } from '@expo/vector-icons';
-import signIn from '../appwriteauth/signIn'; 
+import { AntDesign, Ionicons } from '@expo/vector-icons'; 
+import { sendOTP } from '../appwriteauth/twilio';
+
+
 
 export default function SignInScreen({ navigation }) {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [ phoneNumber, setPhoneNumber] = useState('');
+    const [generatedOtp, setGeneratedOtp] = useState('');
 
     const handleSignIn = async () => {
         try {
-            await signIn(email, password);
-            navigation.navigate("MyTabs");
+            // Send OTP
+            const otp = await sendOTP(phoneNumber);
+            setGeneratedOtp(otp);
+            navigation.navigate('VerifyOTP', { phoneNumber, generatedOtp: otp }); // Navigate to OTP verification screen
+
         } catch (error) {
-            Alert.alert('Error', 'Enter correct Email or Password');
-            console.error('Error signing in:', error);
+            console.error('Failed to send OTP:', error);
+            Alert.alert('Error', 'Failed to send OTP. Please try again.');
         }
     };
 
+
     return (
+
+        
         <View style={{ flex: 1, fontFamily: 'serif' }}>
             <View>
                 <TouchableOpacity onPress={() => navigation.navigate("Welcome")} style={{ top: hp('6%'), left: 15 }}>
@@ -38,7 +46,7 @@ export default function SignInScreen({ navigation }) {
                 <View style={{ top: hp('20%'), alignItems: 'center' }}>
                     <View>
                         <Text style={{ paddingBottom: '3%', fontWeight: '600', fontSize: 17, fontFamily: 'serif' }}>
-                            Email
+                       Phone Number
                         </Text>
                         <View>
                             <Ionicons name="call-outline" size={20} color="#E3242B" style={{
@@ -55,14 +63,14 @@ export default function SignInScreen({ navigation }) {
                                     paddingLeft: 50,
                                     fontSize: 17
                                 }}
-                                value={email}
-                                onChangeText={(text) => setEmail(text)}
-                                keyboardType='email-address'
+                                value={phoneNumber}
+                                onChangeText={(text) => setPhoneNumber(text)}
+                                keyboardType='default'
                             />
                         </View>
                     </View>
 
-                    <View>
+                    {/* <View>
                         <Text style={{ fontWeight: '600', top: 10, fontSize: 17, fontFamily: 'serif' }}>
                             Password
                         </Text>
@@ -88,7 +96,7 @@ export default function SignInScreen({ navigation }) {
                                 secureTextEntry={true}
                             />
                         </View>
-                    </View>
+                    </View> */}
 
                     <View>
                         <TouchableOpacity
