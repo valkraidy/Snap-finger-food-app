@@ -21,21 +21,21 @@ export default function SignUp({ navigation }) {
     const [generatedOtp, setGeneratedOtp] = useState('');
 
 
-     const handleSignUp = async () => {
-        try {
-            const response = await account.create(ID.unique(), phoneNumber, 'temporaryPassword', username); 
-            console.log('User signed up:', response);
+    //  const handleSignUp = async () => {
+    //     try {
+    //         const response = await account.create(ID.unique(), phoneNumber, 'temporaryPassword', username); 
+    //         console.log('User signed up:', response);
 
-            // Send OTP
-            const otp = await sendOTP(phoneNumber);
-            setGeneratedOtp(otp);
-            navigation.navigate('VerifyOTP', { phoneNumber, generatedOtp: otp }); // Navigate to OTP verification screen
+    //         // Send OTP
+    //         const otp = await sendOTP(phoneNumber);
+    //         setGeneratedOtp(otp);
+    //         navigation.navigate('VerifyOTP', { phoneNumber, generatedOtp: otp }); // Navigate to OTP verification screen
 
-        } catch (error) {
-            console.error('Sign-up failed:', error);
-            Alert.alert('Error', 'Sign-up failed. Please try again.');
-        }
-    };
+    //     } catch (error) {
+    //         console.error('Sign-up failed:', error);
+    //         Alert.alert('Error', 'Sign-up failed. Please try again.');
+    //     }
+    // };
     
 
 
@@ -78,7 +78,7 @@ export default function SignUp({ navigation }) {
                                     borderWidth: 1,
                                     height: hp('5%'),
                                     width: wp('80%'),
-                                    borderRadius: 35,
+                                    borderRadius: 10,
                                     paddingLeft: 50,
                                     fontSize: 17
                                 }}
@@ -112,7 +112,7 @@ export default function SignUp({ navigation }) {
                                     borderWidth: 1,
                                     height: hp('5%'),
                                     width: wp('80%'),
-                                    borderRadius: 35,
+                                    borderRadius: 10,
                                     paddingLeft: 50,
                                     fontSize: 17
                                 }}
@@ -129,7 +129,7 @@ export default function SignUp({ navigation }) {
 
                 <View style={{ justifyContent: 'center', alignItems: 'center', top: hp('38%') }}>
                     <TouchableOpacity
-                        onPress={handleSignUp}
+                        onPress={()=>navigation.navigate("VerifyOTP")}
                         style={{
                             height: hp('5.5%'),
                             width: wp('70%'),

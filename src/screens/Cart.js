@@ -24,7 +24,7 @@ export default function CartScreen({ navigation }) {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <TouchableOpacity onPress={() => navigation.navigate("Home")} style={{ margin: 15 }}>
-        <AntDesign name="arrowleft" size={26} color="black" />
+        <AntDesign name="arrowleft" size={26} color="black" style={{top:hp('2%')}} />
       </TouchableOpacity>
 
       <View style={{ padding: 10, borderRadius: 5, flexDirection: 'row', alignItems: 'center' }}>

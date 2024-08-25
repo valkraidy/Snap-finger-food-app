@@ -5,6 +5,7 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import { StatusBar } from 'expo-status-bar';
 import { EvilIcons, AntDesign, Feather, Ionicons } from '@expo/vector-icons';
 import { useCart } from './CartContext';
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 
 export default function Foods({ navigation }) {
   const [modalVisible, setModalVisible] = useState(false);
@@ -92,17 +93,28 @@ export default function Foods({ navigation }) {
   //Handle Add to Cart
 
    const handleAddToCart = () => {
+      const totalPrice = selectedFood.price * quantity;
+       addToCart({ ...selectedFood, quantity, totalPrice });
+
+
     addToCart(selectedFood);
+       setQuantity(1);
     setModalVisible(false);
     Alert.alert('Success🎉🎊', 'Delicious pizza🍕 is added to cart');
   };
+
+  const totalPrice = selectedFood ? selectedFood.price * quantity : 0;
 
 
   const handleFoodPress = (food) => {
     setSelectedFood(food);
     setModalVisible(true);
+    setQuantity(1);
+
   };
 
+
+//filter foods
   const filteredFoods = foods.filter(food =>
     food.title.toLowerCase().includes(searchText.toLowerCase()) ||
     food.description.toLowerCase().includes(searchText.toLowerCase())
@@ -135,7 +147,7 @@ export default function Foods({ navigation }) {
             value={searchText}
             onChangeText={setSearchText}
           />
-          <Feather name="mic" size={24} color="black" />
+          {/* <Feather name="mic" size={24} color="black" /> */}
         </View>
 
         {filteredFoods.map((food) => (
@@ -182,10 +194,14 @@ export default function Foods({ navigation }) {
             <View style={styles.modalView}>
               {selectedFood && (
                 <>
+                
                   <Image source={selectedFood.image} style={styles.foodImage} />
+                   <TouchableOpacity onPress={() => setModalVisible(false)} style={styles.closeButton}>
+                  <FontAwesome6 name="times-circle" size={30} color="black" />
+                  </TouchableOpacity>
                   <Text style={styles.foodTitle}>{selectedFood.title}</Text>
                   <Text style={styles.foodDescription}>{selectedFood.description}</Text>
-                  <Text style={styles.foodPrice}>GHC {selectedFood.price}</Text>
+                  <Text style={styles.foodPrice}>GHC  {totalPrice.toFixed(2)}</Text>
 
                   <View style={styles.quantityContainer}>
                     <TouchableOpacity onPress={decreaseQuantity} style={styles.quantityButton}>
@@ -201,9 +217,7 @@ export default function Foods({ navigation }) {
                     <Text style={styles.addToCartText}>Add to Cart</Text>
                   </TouchableOpacity>
 
-                  <TouchableOpacity onPress={() => setModalVisible(false)} style={styles.closeButton}>
-                    <Text style={styles.closeButtonText}>Close</Text>
-                  </TouchableOpacity>
+                 
                 </>
               )}
             </View>
@@ -282,7 +296,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   closeButton: {
-    marginTop: 10
+    marginTop: 10,
+    top:hp('-34%'),
+    justifyContent:'flex-end',
+    left:wp('40%')
+
+
+    
   },
   closeButtonText: {
     fontSize: 16,

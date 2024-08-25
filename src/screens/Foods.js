@@ -5,6 +5,7 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import { StatusBar } from 'expo-status-bar';
 import { EvilIcons, AntDesign, Feather, Ionicons } from '@expo/vector-icons';
 import { useCart } from './CartContext';
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 
 export default function Foods({ navigation }) {
   const [modalVisible, setModalVisible] = useState(false);
@@ -139,12 +140,12 @@ export default function Foods({ navigation }) {
             value={searchText}
             onChangeText={setSearchText}
           />
-          <Feather name="mic" size={24} color="black" style={{   position:'relative',
+          {/* <Feather name="mic" size={24} color="black" style={{   position:'relative',
                   right:30,
                   top:hp('0%'),
                   //  width: 50,
                   // paddingLeft: 15
-                  }}/> 
+                  }}/>  */}
         </View>
 
         {filteredFoods.map((food) => (
@@ -190,6 +191,12 @@ export default function Foods({ navigation }) {
               {selectedFood && (
                 <>
                   <Image source={selectedFood.image} style={styles.foodImage} />
+
+                   <TouchableOpacity onPress={() => setModalVisible(false)} style={styles.closeButton}>
+                      <FontAwesome6 name="times-circle" size={30} color="black" />
+                  </TouchableOpacity>
+
+
                   <Text style={styles.foodTitle}>{selectedFood.title}</Text>
                   <Text style={styles.foodDescription}>{selectedFood.description}</Text>
                   <Text style={styles.foodPrice}>GHC {selectedFood.price}</Text>
@@ -208,9 +215,7 @@ export default function Foods({ navigation }) {
                     <Text style={styles.addToCartText}>Add to Cart</Text>
                   </TouchableOpacity>
 
-                  <TouchableOpacity onPress={() => setModalVisible(false)} style={styles.closeButton}>
-                    <Text style={styles.closeButtonText}>Close</Text>
-                  </TouchableOpacity>
+                 
                 </>
               )}
             </View>
@@ -288,7 +293,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   closeButton: {
-    marginTop: 10
+    marginTop: 10,
+    top:hp('-34%'),
+    justifyContent:'flex-end',
+    left:wp('40%')
   },
   closeButtonText: {
     fontSize: 16,

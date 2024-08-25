@@ -1,11 +1,12 @@
-
-
 import React, { useState } from 'react';
 import { View, Text, TextInput, SafeAreaView, TouchableOpacity, Image, Modal, ScrollView, StyleSheet,Alert } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { StatusBar } from 'expo-status-bar';
 import { EvilIcons, AntDesign, Feather, Ionicons } from '@expo/vector-icons';
 import { useCart } from './CartContext';
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
+
+
 
 export default function Foods({ navigation }) {
   const [modalVisible, setModalVisible] = useState(false);
@@ -189,7 +190,7 @@ export default function Foods({ navigation }) {
             style={{
                   position:'absolute',
                   left:10,
-                      top:hp('2%'),
+                  top:hp('2%'),
                   width: 50,
                   paddingLeft: 15
                 }} />
@@ -247,6 +248,12 @@ export default function Foods({ navigation }) {
               {selectedFood && (
                 <>
                   <Image source={selectedFood.image} style={styles.foodImage} />
+
+                   <TouchableOpacity onPress={() => setModalVisible(false)} style={styles.closeButton}>
+                      <FontAwesome6 name="times-circle" size={30} color="black" />
+                  </TouchableOpacity>
+
+
                   <Text style={styles.foodTitle}>{selectedFood.title}</Text>
                   <Text style={styles.foodDescription}>{selectedFood.description}</Text>
                   <Text style={styles.foodPrice}>GHC{selectedFood.price}</Text>
@@ -265,9 +272,7 @@ export default function Foods({ navigation }) {
                     <Text style={styles.addToCartText}>Add to Cart</Text>
                   </TouchableOpacity>
 
-                  <TouchableOpacity onPress={() => setModalVisible(false)} style={styles.closeButton}>
-                    <Text style={styles.closeButtonText}>Close</Text>
-                  </TouchableOpacity>
+                 
                 </>
               )}
             </View>
@@ -345,7 +350,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   closeButton: {
-    marginTop: 10
+    marginTop: 10,
+    top:hp('-34%'),
+    justifyContent:'flex-end',
+    left:wp('40%')
   },
   closeButtonText: {
     fontSize: 16,

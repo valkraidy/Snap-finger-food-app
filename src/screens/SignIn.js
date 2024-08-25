@@ -11,18 +11,18 @@ export default function SignInScreen({ navigation }) {
     const [ phoneNumber, setPhoneNumber] = useState('');
     const [generatedOtp, setGeneratedOtp] = useState('');
 
-    const handleSignIn = async () => {
-        try {
-            // Send OTP
-            const otp = await sendOTP(phoneNumber);
-            setGeneratedOtp(otp);
-            navigation.navigate('VerifyOTP', { phoneNumber, generatedOtp: otp }); // Navigate to OTP verification screen
+    // const handleSignIn = async () => {
+    //     try {
+    //         // Send OTP
+    //         const otp = await sendOTP(phoneNumber);
+    //         setGeneratedOtp(otp);
+    //         navigation.navigate('VerifyOTP', { phoneNumber, generatedOtp: otp }); // Navigate to OTP verification screen
 
-        } catch (error) {
-            console.error('Failed to send OTP:', error);
-            Alert.alert('Error', 'Failed to send OTP. Please try again.');
-        }
-    };
+    //     } catch (error) {
+    //         console.error('Failed to send OTP:', error);
+    //         Alert.alert('Error', 'Failed to send OTP. Please try again.');
+    //     }
+    // };
 
 
     return (
@@ -50,7 +50,7 @@ export default function SignInScreen({ navigation }) {
                         </Text>
                         <View>
                             <Ionicons name="call-outline" size={20} color="#E3242B" style={{
-                                position: 'absolute', left: 10, top: hp('1%'), width: 25,
+                                position: 'absolute', left: 10, top: hp('1.5%'), width: 25,
                             }} />
                             <TextInput
                                 style={{
@@ -59,7 +59,7 @@ export default function SignInScreen({ navigation }) {
                                     borderWidth: 1,
                                     height: hp('5%'),
                                     width: wp('80%'),
-                                    borderRadius: 35,
+                                    borderRadius: 10,
                                     paddingLeft: 50,
                                     fontSize: 17
                                 }}
@@ -112,7 +112,7 @@ export default function SignInScreen({ navigation }) {
 
                 <View style={{ justifyContent: 'center', alignItems: 'center', top: hp('46%') }}>
                     <TouchableOpacity
-                        onPress={handleSignIn}
+                        onPress={() => navigation.navigate("MyTabs")}
                         style={{
                             height: hp('5.5%'),
                             width: wp('70%'),

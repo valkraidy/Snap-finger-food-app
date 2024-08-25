@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
     fontSize:30,
     fontWeight: '600',
     color:"#E3242B",
-    top:hp('2%')
+    top:hp('1%')
     // fontStyle:'italic',
     
 
@@ -191,9 +191,10 @@ const styles = StyleSheet.create({
     marginTop: hp('3%'),
   },
   titleText: {
-    fontSize: wp('4.5%'),
+    fontSize: wp('5%'),
     fontWeight: '400',
     color: '#E3242B',
+     marginTop: hp('-1.5%'),
   },
   highlight: {
     color: '#000',
@@ -201,14 +202,14 @@ const styles = StyleSheet.create({
   imageSliderContainer: {
     width: WIDTH,
     height: hp('28%'),
-    marginTop: hp('3%'),
+    marginTop: hp('1.5%'),
     justifyContent: 'center',
-    marginRight: 100,
+    // marginRight: 100,
   },
   sliderImage: {
     width: wp('80%'),
     borderRadius: 30,
-    height: hp('20%'),
+    height: hp('21%'),
     marginHorizontal: wp('10%'),
   },
   dotContainer: {
