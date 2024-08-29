@@ -44,14 +44,20 @@ export default function Onboarding2({ navigation }) {
         {/* TouchableOpacity */}
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center',top:hp('68%') }}>
           <TouchableOpacity
-            style={{ height: hp('5%'), width: wp('80%'), backgroundColor: '#E3242B', borderRadius: 46 }}
+            style={{ height: hp('5%'), width: wp('80%'), backgroundColor: '#E3242B', borderRadius: 10 ,}}
             onPress={() => navigation.navigate("Onboarding3")}
           >
             <Text style={{fontFamily:'serif', color: '#fff', textAlign: 'center', top: hp('1%'), fontSize: hp('2.5%'), fontWeight: '600' }}>Next</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => navigation.navigate("Welcome")}>
-            <Text style={{fontFamily:'serif', color: '#fff', textAlign: 'center', top: hp('2%'), fontSize: hp('2.5%'), fontWeight: '600' }}>Skip</Text>
+          
+
+          <TouchableOpacity 
+          onPress={() => navigation.navigate("Welcome")}
+          style={{ height: hp('5%'), width: wp('80%'), borderColor: '#E3242B', borderRadius: 10, top: hp('2%'),borderWidth:1}}
+          
+          >
+            <Text style={{fontFamily:'serif', color: '#fff', textAlign: 'center', top: hp('0.2%'), fontSize: hp('2.5%'), fontWeight: '900' }}>Skip</Text>
           </TouchableOpacity>
         </View>
         </View>

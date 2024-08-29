@@ -59,7 +59,7 @@ export default function Onboarding2({ navigation }) {
                    height: hp('5%'),
                      width: wp('80%'),
                    backgroundColor: '#E3242B',
-                      borderRadius: 46,alignContent:'center' }}
+                      borderRadius: 10,alignContent:'center' }}
                 onPress={() => navigation.navigate("OnboardingTwo")}
               >
                 

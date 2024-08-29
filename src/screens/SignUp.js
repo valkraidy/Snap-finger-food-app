@@ -114,7 +114,7 @@ export default function SignUp({ navigation }) {
                                     width: wp('80%'),
                                     borderRadius: 10,
                                     paddingLeft: 50,
-                                    fontSize: 17
+                                    fontSize: 17,  
                                 }}
                                 value={username}
                                 onChangeText={setUsername}
@@ -131,17 +131,17 @@ export default function SignUp({ navigation }) {
                     <TouchableOpacity
                         onPress={()=>navigation.navigate("VerifyOTP")}
                         style={{
-                            height: hp('5.5%'),
-                            width: wp('70%'),
+                            height: hp('5%'),
+                            width: wp('80%'),
                             backgroundColor: '#E3242B',
-                            borderRadius: 36
+                            borderRadius: 10
                         }}
                     >
                         <Text style={{
                             fontFamily: 'serif',
                             color: '#fff',
                             textAlign: 'center',
-                            top: hp('1.3%'),
+                            top: hp('1%'),
                             fontSize: 18,
                             fontWeight: '500'
                         }}>

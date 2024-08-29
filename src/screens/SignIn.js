@@ -114,16 +114,16 @@ export default function SignInScreen({ navigation }) {
                     <TouchableOpacity
                         onPress={() => navigation.navigate("MyTabs")}
                         style={{
-                            height: hp('5.5%'),
-                            width: wp('70%'),
+                            height: hp('5%'),
+                            width: wp('80%'),
                             backgroundColor: '#E3242B',
-                            borderRadius: 36
+                            borderRadius: 10
                         }}
                     >
                         <Text style={{
                             color: '#fff',
                             textAlign: 'center',
-                            top: hp('1.4%'),
+                            top: hp('1%'),
                             fontSize: 18,
                             fontWeight: '500',
                             fontFamily: 'serif'

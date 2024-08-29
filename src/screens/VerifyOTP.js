@@ -69,7 +69,7 @@ export default function VerifyOTP({ navigation, route }) {
                 style={{
                     borderColor: '#E3242B',
                     borderWidth: 1,
-                    height: hp('6%'),
+                    height: hp('5%'),
                     width: wp('80%'),
                     borderRadius: 10,
                     paddingLeft: 15,
@@ -92,16 +92,16 @@ export default function VerifyOTP({ navigation, route }) {
 
        
 
-            <View style={{justifyContent:'center',alignItems:'center',top: hp('55%')}}>
+            <View style={{justifyContent:'center',alignItems:'center',top: hp('45%')}}>
                 <TouchableOpacity
                      onPress={() => navigation.navigate("MyTabs")}
 
-                    style={{height:hp('6%'),
-                    width:wp ('70%'),
+                    style={{height:hp('5%'),
+                    width:wp ('80%'),
                     backgroundColor:'#E3242B',
-                    borderRadius:36}} 
+                    borderRadius:10}} 
                 >
-                      <Text style={{fontFamily:'serif',color:'#fff',textAlign:'center',top:hp ('2%'),fontSize:18,fontWeight:500}}>Get Started</Text>
+                      <Text style={{fontFamily:'serif',color:'#fff',textAlign:'center',top:hp ('1%'),fontSize:18,fontWeight:500}}>Get Started</Text>
 
                 </TouchableOpacity>
 

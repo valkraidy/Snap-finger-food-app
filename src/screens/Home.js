@@ -13,38 +13,38 @@ const images = [
 ];
 
 const data = [
-  // {
-  //   id: 1,
-  //   title: "Hamburger",
-  //   imageUrl: 'https://cdn.pixabay.com/photo/2014/10/19/20/59/hamburger-494706_1280.jpg',
-  //   price: '12.00',
-  //   description: 'A juicy hamburger with fresh lettuce and tomatoes.'
-  // },
+  {
+    id: 1,
+    title: "Apple smoothie",
+    image: require('../smoothiesimages/apple.jpg'),
+    price: '12',
+    description: 'A juicy hamburger with fresh lettuce and tomatoes.'
+  },
   {
     id: 2,
-    title: "Salmon",
-    imageUrl: 'https://cdn.pixabay.com/photo/2014/11/05/15/57/salmon-518032_960_720.jpg',
+    title: "Vegetarian Pizza",
+   image: require('../pizzaimages/vpizza.jpg'),
     price: '18',
     description: 'Freshly grilled salmon with a hint of lemon.'
   },
   {
     id: 3,
     title: "Pizza",
-    imageUrl: 'https://cdn.pixabay.com/photo/2017/12/10/14/47/pizza-3010062_1280.jpg',
+    image: require('../images/FRC.jpeg'),
     price: '15',
     description: 'Delicious pizza with a variety of toppings.'
   },
   {
     id: 4,
     title: "Coca cola",
-    imageUrl: 'https://cdn.pixabay.com/photo/2015/01/08/04/16/box-592366_1280.jpg',
+      image: require('../drinksImages/cancoke.jpeg'),
     price: '10',
     description: 'Classic pasta with rich tomato sauce.'
   },
   {
     id: 5,
     title: "Assorted jollof",
-    imageUrl: 'https://cdn.pixabay.com/photo/2014/01/09/10/14/kimchi-fried-rice-241051_1280.jpg',
+     image: require('../images/AF.jpeg'),
     price: '25',
     description: 'Tender steak cooked to perfection.'
   },
@@ -135,7 +135,7 @@ export default function Herosection({ navigation }) {
             {data.map((item, index) => (
               <TouchableOpacity key={index} style={styles.itemTouchable}>
                 <View style={styles.itemContainer}>
-                  <Image source={{ uri: item.imageUrl }} style={styles.itemImage} />
+                  <Image source={ item.image } style={styles.itemImage} />
                   <View style={styles.itemTextContainer}>
                     <Text style={styles.itemTitle}>{item.title}</Text>
                     <Text style={styles.itemDescription}>{item.description}</Text>
