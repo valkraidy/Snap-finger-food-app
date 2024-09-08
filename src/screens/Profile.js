@@ -7,7 +7,7 @@ import { AntDesign } from '@expo/vector-icons';
 
 
 
-export default function Settings({navigation}) {
+export default function Profile({navigation}) {
 
   return (
 
@@ -41,18 +41,6 @@ export default function Settings({navigation}) {
       </View>
 
 
-
-
-
-
-        {/* <View style={{}}>
-            <Text style={{
-                 fontSize: 25,
-                fontWeight:400,
-                alignText:'center',
-                
-                }}>Profile</Text>
-        </View> */}
 
 {/* LIST */}
         <View style={{ marginTop:hp('10%'),}}   >

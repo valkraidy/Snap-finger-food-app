@@ -4,6 +4,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { StatusBar } from 'expo-status-bar';
 import { Ionicons } from '@expo/vector-icons';
+// import Ionicons from '@expo/vector-icons/Ionicons';
 // import MyTabs from './MyTabs';
 
 const images = [
@@ -71,16 +72,23 @@ export default function Herosection({ navigation }) {
         <View style={styles.container}>
           <View style={styles.header}>
             <Text style={styles.headerText}>SnapFinger</Text>
-            <TouchableOpacity>
+            <TouchableOpacity
+            onPress={()=>navigation.navigate('Profile')}
+            >
               {/* <Image source={require('../images/profile.png')} /> */}
               {/* <FontAwesome name="user-circle-o" size={24} color="black" /> */}
+              <Ionicons name="menu-outline" size={35} color="black"
+              style={{top:hp('1.5%')}}
+              />
             </TouchableOpacity>
           </View>
 
           <View style={styles.titleContainer}>
             <Text style={styles.titleText}>
-              Choose Your <Text style={styles.highlight}>Food Today</Text>
+             Hey Kraidy,<Text style={styles.highlight}> Choose your food today</Text>
+            
             </Text>
+            
           </View>
 
           <View style={styles.imageSliderContainer}>
@@ -153,6 +161,8 @@ export default function Herosection({ navigation }) {
             ))}
           </View>
 
+
+
           <StatusBar style="auto" />
         </View>
       </ScrollView>
@@ -204,23 +214,29 @@ const styles = StyleSheet.create({
     height: hp('28%'),
     marginTop: hp('1.5%'),
     justifyContent: 'center',
-    // marginRight: 100,
+   
   },
   sliderImage: {
     width: wp('80%'),
-    borderRadius: 30,
+    borderRadius: 20,
     height: hp('21%'),
     marginHorizontal: wp('10%'),
+    alignItems:'center',
+     right:20
+
+
   },
   dotContainer: {
-    position: 'absolute',
+     position: 'absolute',
     bottom: 10,
     flexDirection: 'row',
     alignSelf: 'center',
+    right:200
   },
   dotActive: {
     margin: 3,
     color: '#E3242B',
+    
   },
   dot: {
     margin: 3,

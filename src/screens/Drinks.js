@@ -116,11 +116,11 @@ export default function Foods({ navigation }) {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={{ flexGrow: 1, paddingBottom: 20 }}>
-        <TouchableOpacity onPress={() => navigation.navigate("Home")} style={{ top: hp('3%'), left: 15 }}>
+        <TouchableOpacity onPress={() => navigation.navigate("Home")} style={{ top: hp('5%'), left: 15 }}>
           <AntDesign name="arrowleft" size={26} color="black" /> 
         </TouchableOpacity>
 
-        <View style={{ padding: 10, top: hp('2.7%'), borderRadius: 5, flexDirection: 'row', alignItems: 'center' }}>
+        <View style={{ padding: 10, top: hp('6%'), borderRadius: 5, flexDirection: 'row', alignItems: 'center' }}>
           <EvilIcons name="search" size={30} color="black"
             style={{
                   position:'absolute',
@@ -132,12 +132,12 @@ export default function Foods({ navigation }) {
             
 
           <TextInput
-            style={{ height: hp('5%'), borderColor: '#E3242B', borderWidth: 1, borderRadius: 35, paddingLeft: 50, flex: 1,fontSize:15 }}
+            style={{ height: hp('5%'),width:wp('80%'), borderColor: '#E3242B', borderWidth: 1, borderRadius: 10, paddingLeft: 50, flex: 1,fontSize:15 }}
             placeholder={'Find a chilled drink...'}
             value={searchText}
             onChangeText={setSearchText}
           />
-          <Feather name="mic" size={24} color="black" />
+          {/* <Feather name="mic" size={24} color="black" /> */}
         </View>
 
         {filteredFoods.map((food) => (
@@ -234,7 +234,7 @@ const styles = StyleSheet.create({
   },
   foodContainer: {
     flexDirection: 'row',
-    top: hp('5%')
+    top: hp('10%')
   },
   foodImage: {
     width: wp('100%'),
