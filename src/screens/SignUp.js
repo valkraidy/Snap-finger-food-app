@@ -4,14 +4,6 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import { StatusBar } from 'expo-status-bar';
 import { AntDesign, Ionicons } from '@expo/vector-icons';
  import { Account, Client, ID } from 'appwrite';
-import { sendOTP } from '../appwriteauth/twilio';
-
-
-const client = new Client()
-    .setEndpoint('https://cloud.appwrite.io/v1') // Your API Endpoint
-     .setProject('669f868700200a22247f');                 // Your project ID
-
-const account = new Account(client);
 
 
 

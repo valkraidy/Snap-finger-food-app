@@ -359,7 +359,7 @@ export default function Foods({ navigation }) {
 
   const handleAddToCart = () => {
     if (selectedFood) {
-      addToCart({ ...selectedFood, quantity }); // Pass quantity to addToCart function
+      addToCart({ ...selectedFood, quantity });
       setModalVisible(false);
       setQuantity(1);
       Alert.alert('Success🎉🎊', 'Delicious pizza🍕 is added to cart');
@@ -372,6 +372,7 @@ export default function Foods({ navigation }) {
     setQuantity(1);
   };
 
+  //filter foods
   const filteredFoods = foods.filter(food =>
     food.title.toLowerCase().includes(searchText.toLowerCase()) ||
     food.description.toLowerCase().includes(searchText.toLowerCase())
@@ -380,14 +381,14 @@ export default function Foods({ navigation }) {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={{ flexGrow: 1, paddingBottom: 20 }}>
-        <TouchableOpacity onPress={() => navigation.navigate("Home")} style={{ top: hp('3%'), left: 15 }}>
-          <AntDesign name="arrowleft" size={26} color="black" />
+        <TouchableOpacity onPress={() => navigation.navigate("Home")} style={{ top: hp('5%'), left: 15 }}>
+          <AntDesign name="arrowleft" size={30} color="black" />
         </TouchableOpacity>
 
-        <View style={{ padding: 10, top: hp('2.7%'), borderRadius: 5, flexDirection: 'row', alignItems: 'center' }}>
-          <EvilIcons name="search" size={30} color="black" style={{ position: 'absolute', left: 10, top: hp('2%'), width: 50, paddingLeft: 15 }} />
+        <View style={{ padding: 10, top: hp('6%'), borderRadius: 5, flexDirection: 'row', alignItems: 'center' }}>
+          <EvilIcons name="search" size={30} color="black" style={{ position: 'absolute', left: 10, top: hp('2%'), paddingLeft: 15 }} />
           <TextInput
-            style={{ height: hp('5%'), borderColor: '#E3242B', borderWidth: 1, borderRadius: 35, paddingLeft: 50, flex: 1, fontSize: 15 }}
+            style={{ height: hp('5%'), borderColor: '#E3242B', borderWidth: 1, borderRadius: 10, paddingLeft: 50, flex: 1, fontSize: 15 }}
             placeholder={'Find your pizza...'}
             value={searchText}
             onChangeText={setSearchText}
@@ -485,7 +486,7 @@ const styles = StyleSheet.create({
   },
   foodContainer: {
     flexDirection: 'row',
-    top: hp('5%')
+    top: hp('10%')
   },
   foodImage: {
     width: wp('100%'),

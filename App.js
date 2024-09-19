@@ -1,9 +1,10 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { CartProvider } from './src/screens/CartContext';
-import OnboardingOne from './src/screens/OnboardingOne';
-import OnboardingTwo from './src/screens/OnboardingTwo';
-import Onboarding3 from './src/screens/Onboarding3';
+import Onboarding1 from './src/screens/Onboarding1';
+// import OnboardingOne from './src/screens/OnboardingOne';
+// import OnboardingTwo from './src/screens/OnboardingTwo';
+// import Onboarding3 from './src/screens/Onboarding3';
 import Welcome from './src/screens/Welcome';
 import SignUp from './src/screens/SignUp';
 import VerifyOTP from './src/screens/VerifyOTP';
@@ -23,9 +24,10 @@ export default function App() {
     <CartProvider>
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="OnboardingOne" component={OnboardingOne} options={{ headerShown: false }} />
-        <Stack.Screen name="OnboardingTwo" component={OnboardingTwo} options={{ headerShown: false }} />
-        <Stack.Screen name="Onboarding3" component={Onboarding3} options={{ headerShown: false }} />
+         <Stack.Screen name="Onboarding1" component={Onboarding1} options={{ headerShown: false }} />
+        {/* <Stack.Screen name="OnboardingOne" component={OnboardingOne} options={{ headerShown: false }} /> */}
+        {/* <Stack.Screen name="OnboardingTwo" component={OnboardingTwo} options={{ headerShown: false }} />
+        <Stack.Screen name="Onboarding3" component={Onboarding3} options={{ headerShown: false }} /> */}
         <Stack.Screen name="Welcome" component={Welcome} options={{ headerShown: false }} />
         <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown: false }} />
         <Stack.Screen name="VerifyOTP" component={VerifyOTP} options={{ headerShown: false }} />

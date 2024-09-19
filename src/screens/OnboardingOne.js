@@ -22,7 +22,7 @@ export default function Onboarding2({ navigation }) {
         }}
       >
          </ImageBackground>
-        <View style={{backgroundColor:'black',height:hp('100%'),opacity:0.6}}>
+        <View style={{backgroundColor:'black',height:hp('100%'),opacity:0.7}}>
         </View>
          <View style={{position:"absolute", left: 0, right: 0, alignItems: "center"}}>
             <View style={{ flex: 1, alignItems: 'center', top: hp('34%'),textAlign: 'center' }}>

@@ -34,7 +34,7 @@ export default function Profile({navigation}) {
         />
         <View style={{alignItems:'center'}}>
           <Text style={{fontSize:20,fontWeight:800}}>Val Kraidy</Text>
-        <Text style={{fontSize:20,fontWeight:400}}>... ... 2993</Text>
+        <Text style={{fontSize:20,fontWeight:400}}>024 148 2993</Text>
 
         </View>
         

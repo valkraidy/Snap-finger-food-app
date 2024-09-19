@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, SafeAreaView, TouchableOpacity, Image, Modal, ScrollView, StyleSheet,Alert } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { StatusBar } from 'expo-status-bar';
-import { EvilIcons, AntDesign, Feather, Ionicons } from '@expo/vector-icons';
+import { EvilIcons, AntDesign,  Ionicons } from '@expo/vector-icons';
 import { useCart } from './CartContext';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 
@@ -106,7 +106,7 @@ export default function Foods({ navigation }) {
     setSelectedFood(food);
     setModalVisible(true);
   };
-
+//filter foods
   const filteredFoods = foods.filter(food =>
     food.title.toLowerCase().includes(searchText.toLowerCase()) ||
     food.description.toLowerCase().includes(searchText.toLowerCase())
@@ -119,7 +119,7 @@ export default function Foods({ navigation }) {
     <SafeAreaView style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={{ flexGrow: 1, paddingBottom: 20 }}>
         <TouchableOpacity onPress={() => navigation.navigate("Home")} style={{ top: hp('3%'), left: 15 }}>
-          <AntDesign name="arrowleft" size={26} color="black" /> 
+          <AntDesign name="arrowleft" size={30} color="black" /> 
         </TouchableOpacity>
 
         <View style={{ padding: 10, top: hp('2.7%'), borderRadius: 5, flexDirection: 'row', alignItems: 'center' }}>
@@ -134,7 +134,7 @@ export default function Foods({ navigation }) {
             
 
           <TextInput
-            style={{ height: hp('5%'), borderColor: '#E3242B', borderWidth: 1, borderRadius: 35, paddingLeft: 50, flex: 1,fontSize:15 }}
+            style={{ height: hp('5%'), borderColor: '#E3242B', borderWidth: 1, borderRadius: 10, paddingLeft: 50, flex: 1,fontSize:15 }}
             placeholder={'Find your favourate smoothie...'}
             value={searchText}
             onChangeText={setSearchText}

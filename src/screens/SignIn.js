@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, TextInput, Alert } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { StatusBar } from 'expo-status-bar';
 import { AntDesign, Ionicons } from '@expo/vector-icons'; 
-import { sendOTP } from '../appwriteauth/twilio';
+
 
 
 
@@ -11,18 +11,7 @@ export default function SignInScreen({ navigation }) {
     const [ phoneNumber, setPhoneNumber] = useState('');
     const [generatedOtp, setGeneratedOtp] = useState('');
 
-    // const handleSignIn = async () => {
-    //     try {
-    //         // Send OTP
-    //         const otp = await sendOTP(phoneNumber);
-    //         setGeneratedOtp(otp);
-    //         navigation.navigate('VerifyOTP', { phoneNumber, generatedOtp: otp }); // Navigate to OTP verification screen
-
-    //     } catch (error) {
-    //         console.error('Failed to send OTP:', error);
-    //         Alert.alert('Error', 'Failed to send OTP. Please try again.');
-    //     }
-    // };
+  
 
 
     return (
