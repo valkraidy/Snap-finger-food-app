@@ -10,16 +10,16 @@ const Skip = ({...props}) => (
    {...props}
     style={{color:'#000'}}
     >
-        <Text style={{fontSize:20,}}>Skip</Text>
+        <Text style={{fontSize:20,color:'#fff',fontWeight:'700'}}>Skip</Text>
     </TouchableOpacity>
 )
 
 const Next = ({...props}) => (
     <TouchableOpacity
    {...props}
-    style={{color:'#000'}}
+    style={{color:'#fff'}}
     >
-        <Text style={{fontSize:20,}}>Next</Text>
+        <Text style={{fontSize:20,color:'#fff',fontWeight:'700'}}>Next</Text>
     </TouchableOpacity>
 )
 
@@ -28,7 +28,7 @@ const Done = ({...props}) => (
    {...props}
     style={{color:'#000'}}
     >
-        <Text style={{fontSize:20,}}>Done</Text>
+        <Text style={{fontSize:20,color:'#fff',fontWeight:800}}>DONE</Text>
     </TouchableOpacity>
 )
 
@@ -43,25 +43,34 @@ export default function Onboarding1({navigation}) {
       DoneButtonComponent={Done}
   pages={[
     {
-      backgroundColor: '#fff',
-      image: <Image source={require('../images/Noodles.jpeg')} 
-   
+      backgroundColor: '#000',
+      image: <Image source={require('../images/v2.jpg')} 
+   style={{width:wp('70%'),height:hp('28%')}}
       />,
-      title: 'Onboarding1',
-      titleStyles:{color:'red'},
-      subtitle: 'Done with React Native Onboarding Swiper',
+      title: 'Hungry for convenience?',
+      titleStyles:{fontSize:35,fontWeight:800},
+      subtitle: 'Order now for speedy delivery with no dilevery fees.',
+      subTitleStyles:{fontSize:18,color:'#FFF'},
     },
     {
-      backgroundColor: '#fff',
-      image: <Image source={require('../images/onboard.jpg')} />,
-      title: 'Onboarding2',
-      subtitle: 'Done with React Native Onboarding Swiper',
+      backgroundColor: '#000',
+     image: <Image source={require('../images/pie.jpg')} 
+   style={{width:wp('72%'),height:hp('34%')}}
+      />,
+      title: 'Thinking of what to eat?',
+      titleStyles:{fontSize:35,fontWeight:800},
+      subtitle: ' Get started with easy ordering with no additional charges...',
+      subTitleStyles:{fontSize:18,color:'#fff'},
     },
     {
-      backgroundColor: '#fff',
-      image: <Image source={require('../images/on3.png')} />,
-      title: 'Onboarding3',
-      subtitle: 'Done with React Native Onboarding Swiper',
+      backgroundColor: '#000',
+       image: <Image source={require('../images/d1.jpg')} 
+   style={{width:wp('75%'),height:hp('34%')}}
+      />,
+      title: 'Order now and dig in!!!',
+       titleStyles:{fontSize:35,fontWeight:800},
+      subtitle: 'Craving satisfied for your favorate meal,we deliver fast.',
+         subTitleStyles:{fontSize:18,color:'#fff'},
     },
     
   ]}
