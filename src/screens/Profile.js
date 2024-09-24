@@ -185,7 +185,7 @@ export default function Profile({navigation}) {
         <View >
           <TouchableOpacity 
           style={{top:hp('10%'),flexDirection:'row',gap:8}}
-          onPress={()=> navigation.navigate('OnboardingOne')}
+          onPress={()=> navigation.navigate('Onboarding1')}
           >
              <SimpleLineIcons name="logout" size={23} color="#E3242B" />
 

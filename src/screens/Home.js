@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, Image, ScrollView, SafeAreaView, Dimensions } from 'react-native';
-import { FontAwesome } from '@expo/vector-icons';
+import { StyleSheet, View, Text, TouchableOpacity, Image, ScrollView, SafeAreaView, Dimensions, Modal,Alert } from 'react-native';
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { StatusBar } from 'expo-status-bar';
 import { Ionicons } from '@expo/vector-icons';
-// import Ionicons from '@expo/vector-icons/Ionicons';
-// import MyTabs from './MyTabs';
+import { useCart } from './CartContext';
+import {AntDesign, Feather} from '@expo/vector-icons';
+
 
 const images = [
   'https://cdn.pixabay.com/photo/2017/12/10/14/47/pizza-3010062_1280.jpg',
@@ -13,7 +14,11 @@ const images = [
   'https://cdn.pixabay.com/photo/2014/11/05/15/57/salmon-518032_960_720.jpg',
 ];
 
-const data = [
+
+
+
+
+const food = [
   {
     id: 1,
     title: "Apple smoothie",
@@ -54,8 +59,38 @@ const data = [
 const WIDTH = Dimensions.get('window').width;
 const HEIGHT = Dimensions.get('window').height;
 
-export default function Herosection({ navigation }) {
+export default function Home({ navigation }) {
   const [imgActive, setImgActive] = useState(0);
+  const [selectedFood, setSelectedFood] =useState(null)
+   const [modalVisible, setModalVisible] = useState(false);
+  const [quantity, setQuantity] = useState(1);
+   const { addToCart } = useCart();
+
+
+
+
+//Handle Add to Cart
+
+   const handleAddToCart = () => {
+      addToCart({ ...selectedFood, quantity });
+    setModalVisible(false);
+    Alert.alert('Success🎉🎊', 'Your item is added to cart');
+  };
+
+//Handle selected food
+  const handleFoodPress =(item) =>{
+    setSelectedFood(item);
+    setQuantity(1);
+    setModalVisible(true);
+  }
+    
+
+  //increasing and decreasing
+   const increaseQuantity = () => setQuantity(quantity + 1);
+  const decreaseQuantity = () => setQuantity(quantity > 1 ? quantity - 1 : 1);
+
+
+
 
   const onChange = (nativeEvent) => {
     if (nativeEvent) {
@@ -111,6 +146,8 @@ export default function Herosection({ navigation }) {
             </View>
           </View>
 
+
+
           {/* Categories */}
 
           <View style={styles.categoriesContainer}>
@@ -140,8 +177,10 @@ export default function Herosection({ navigation }) {
           </View>
 
           <View style={styles.itemsContainer}>
-            {data.map((item, index) => (
-              <TouchableOpacity key={index} style={styles.itemTouchable}>
+            {food.map((item, index) => (
+              <TouchableOpacity key={index} 
+              onPress={() => handleFoodPress(item)}
+              style={styles.itemTouchable}>
                 <View style={styles.itemContainer}>
                   <Image source={ item.image } style={styles.itemImage} />
                   <View style={styles.itemTextContainer}>
@@ -160,6 +199,59 @@ export default function Herosection({ navigation }) {
               </TouchableOpacity>
             ))}
           </View>
+
+
+
+{/* Modal for food details */}
+
+
+          <Modal
+          animationType="slide"
+          transparent={true}
+          visible={modalVisible}
+          onRequestClose={() => setModalVisible(false)}
+        >
+          <View style={styles.modalContainer}>
+            <View style={styles.modalView}>
+              {selectedFood && (
+                <>
+                  <Image source={selectedFood.image} style={styles.foodImage} />
+
+                   <TouchableOpacity onPress={() => setModalVisible(false)} style={styles.closeButton}>
+                      <FontAwesome6 name="times-circle" size={30} color="black" />
+                  </TouchableOpacity>
+
+
+                  <Text style={styles.foodTitle}>{selectedFood.title}</Text>
+                  <Text style={styles.foodDescription}>{selectedFood.description}</Text>
+                  <Text style={styles.foodPrice}>GHC{selectedFood.price}</Text>
+
+                  <View style={styles.quantityContainer}>
+                    <TouchableOpacity onPress={decreaseQuantity} style={styles.quantityButton}>
+                     <AntDesign name="minuscircleo" size={24} color="black" />
+                    </TouchableOpacity>
+                    <Text style={styles.quantityText}>{quantity}</Text>
+                    <TouchableOpacity onPress={increaseQuantity} style={styles.quantityButton}>
+                    <Ionicons name="add-circle-outline" size={30} color="black"/>
+                    </TouchableOpacity>
+                  </View>
+
+                  <TouchableOpacity style={styles.addToCartButton}  onPress={handleAddToCart}  >
+                    <Text style={styles.addToCartText}>Add to Cart</Text>
+                  </TouchableOpacity>
+
+                 
+                </>
+              )}
+            </View>
+          </View>
+        </Modal>
+
+
+
+
+
+
 
 
 
@@ -312,4 +404,83 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: 'bold',
   },
+  //modal
+   modalContainer: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    backgroundColor: 'rgba(0,0,0,0.5)'
+  },
+  modalView: {
+    backgroundColor: 'white',
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    padding: 20,
+    alignItems: 'center'
+  },
+   foodContainer: {
+    flexDirection: 'row',
+    top: hp('5%')
+  },
+  foodImage: {
+    width: wp('100%'),
+    height: hp('30%'),
+    borderRadius: 20 ,
+    top:hp('-5%')
+    // marginBottom: 10
+  },
+  foodTitle: {
+    fontSize: 28,
+    fontWeight: 'bold'
+  },
+  foodDescription: {
+    fontSize: 18,
+    textAlign: 'center',
+    marginVertical: 10,
+      fontWeight: '300'
+  },
+  foodPrice: {
+    fontSize: 20,
+    fontWeight: '400',
+    marginVertical: 3
+  },
+  quantityContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 3
+  },
+  quantityButton: {
+    padding: 10
+  },
+  quantityText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginHorizontal: 20
+  },
+  addToCartButton: {
+    backgroundColor: '#E3242B',
+    borderRadius: 20,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    marginVertical: 10
+  },
+  addToCartText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold'
+  },
+  closeButton: {
+    marginTop: 10,
+    top:hp('-34%'),
+    justifyContent:'flex-end',
+    left:wp('40%')
+  },
+  closeButtonText: {
+    fontSize: 16,
+    color: '#E3242B',
+    fontWeight: 'bold'
+  }
+
 });
+
+
+

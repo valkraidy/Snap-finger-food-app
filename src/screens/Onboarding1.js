@@ -6,30 +6,60 @@ import React from 'react'
 
 //Costume Skip,done and Next buttons
 const Skip = ({...props}) => (
-    <TouchableOpacity
-   {...props}
-    style={{color:'#000'}}
-    >
-        <Text style={{fontSize:20,color:'#fff',fontWeight:'700'}}>Skip</Text>
-    </TouchableOpacity>
+  <TouchableOpacity
+     {...props} 
+         
+            style={{height:hp('5%'),width:wp ('30%'),
+            // backgroundColor:'#FAFAFA',
+            borderRadius:5,
+            // borderWidth:1,borderColor:'#E3242B'
+          }} 
+  >
+            <Text style={{color:'#E3242B',
+            textAlign:'center',
+            top:hp ('0.5%'),fontSize:hp('2.6%'),fontWeight:900}}>Skip</Text>
+  </TouchableOpacity>
+
+
+
 )
 
 const Next = ({...props}) => (
-    <TouchableOpacity
-   {...props}
-    style={{color:'#fff'}}
-    >
-        <Text style={{fontSize:20,color:'#fff',fontWeight:'700'}}>Next</Text>
-    </TouchableOpacity>
+
+               <TouchableOpacity
+               {...props}
+                 style={{
+                 
+                   height: hp('6.8%'),
+                     width: wp('20%'),
+                   backgroundColor: '#E3242B',
+                      borderRadius: 1,
+                      alignContent:'center' }}
+              >
+                
+                <Text style={{ color: '#fff',
+                 textAlign: 'center', 
+                 top: hp('1.4%'), fontSize: hp('2.4%'), fontWeight: 900}}>Next </Text>
+              </TouchableOpacity>
 )
 
 const Done = ({...props}) => (
-    <TouchableOpacity
-   {...props}
-    style={{color:'#000'}}
-    >
-        <Text style={{fontSize:20,color:'#fff',fontWeight:800}}>DONE</Text>
-    </TouchableOpacity>
+ 
+   <TouchableOpacity
+               {...props}
+                 style={{
+                 
+                   height: hp('6.8%'),
+                     width: wp('20%'),
+                   backgroundColor: '#E3242B',
+                      borderRadius: 1,
+                      alignContent:'center' }}
+              >
+                
+                <Text style={{ color: '#fff',
+                 textAlign: 'center', 
+                 top: hp('1.4%'), fontSize: hp('2.4%'), fontWeight: 900 }}>Done </Text>
+              </TouchableOpacity>
 )
 
 
@@ -41,36 +71,41 @@ export default function Onboarding1({navigation}) {
      SkipButtonComponent={Skip}
       NextButtonComponent={Next}
       DoneButtonComponent={Done}
+      style={{fontFamily:'serif'}}
   pages={[
     {
-      backgroundColor: '#000',
-      image: <Image source={require('../images/v2.jpg')} 
-   style={{width:wp('70%'),height:hp('28%')}}
+      backgroundColor: '#fff',
+      image: <Image source={require('../images/a1.jpg')} 
+   style={{width:wp('80%'),height:hp('33%')}}
       />,
-      title: 'Hungry for convenience?',
-      titleStyles:{fontSize:35,fontWeight:800},
-      subtitle: 'Order now for speedy delivery with no dilevery fees.',
-      subTitleStyles:{fontSize:18,color:'#FFF'},
+      title: 'Hungry for Convinience?',
+      titleStyles:{fontSize:40,fontWeight:800},
+      subtitle: 'Order now for speedy delivery.',
+      subTitleStyles:{fontSize:20,color:'#000',fontWeight:400},
     },
+
+
     {
-      backgroundColor: '#000',
-     image: <Image source={require('../images/pie.jpg')} 
-   style={{width:wp('72%'),height:hp('34%')}}
+      backgroundColor: '#fff',
+     image: <Image source={require('../images/a22.jpg')} 
+   style={{width:wp('80%'),height:hp('34%')}}
       />,
-      title: 'Thinking of what to eat?',
-      titleStyles:{fontSize:35,fontWeight:800},
-      subtitle: ' Get started with easy ordering with no additional charges...',
-      subTitleStyles:{fontSize:18,color:'#fff'},
+      title: 'Bet You are Hungry,rigth?',
+      titleStyles:{fontSize:40,fontWeight:800},
+      subtitle: 'Craving satisfied ,we deliver fast.',
+      subTitleStyles:{fontSize:20,fontWeight:400}
     },
+
+
     {
-      backgroundColor: '#000',
-       image: <Image source={require('../images/d1.jpg')} 
+      backgroundColor: '#fff',
+       image: <Image source={require('../images/a3.jpg')} 
    style={{width:wp('75%'),height:hp('34%')}}
       />,
-      title: 'Order now and dig in!!!',
-       titleStyles:{fontSize:35,fontWeight:800},
-      subtitle: 'Craving satisfied for your favorate meal,we deliver fast.',
-         subTitleStyles:{fontSize:18,color:'#fff'},
+      title: <Text style={{fontSize:40,fontWeight:800}}>Place Order now</Text>,
+       titleStyles:{fontSize:40,fontWeight:800},
+      subtitle: 'Get started with easy ordering .',
+         subTitleStyles:{fontSize:20,fontWeight:400}
     },
     
   ]}
