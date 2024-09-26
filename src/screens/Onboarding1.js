@@ -102,7 +102,7 @@ export default function Onboarding1({navigation}) {
        image: <Image source={require('../images/a3.jpg')} 
    style={{width:wp('75%'),height:hp('34%')}}
       />,
-      title: <Text style={{fontSize:40,fontWeight:800}}>Place Order now</Text>,
+      title: <Text style={{fontSize:40,fontWeight:800}}>Place Your Order now</Text>,
        titleStyles:{fontSize:40,fontWeight:800},
       subtitle: 'Get started with easy ordering .',
          subTitleStyles:{fontSize:20,fontWeight:400}

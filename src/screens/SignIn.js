@@ -24,17 +24,17 @@ export default function SignInScreen({ navigation }) {
                 </TouchableOpacity>
 
                 <View style={{ top: hp('7%'), justifyContent: 'center', alignItems: 'center' }}>
-                    <Text style={{ fontSize: 24, fontWeight: '700', fontFamily: 'serif' }}>
+                    <Text style={{ fontSize: 24, fontWeight: '700' }}>
                         Let's Get You Signed In
                     </Text>
-                    <Text style={{ fontSize: 20, fontWeight: '400', color: 'black', fontFamily: 'serif' }}>
+                    <Text style={{ fontSize: 20, fontWeight: '400', color: 'black' }}>
                         Welcome Back
                     </Text>
                 </View>
 
                 <View style={{ top: hp('20%'), alignItems: 'center' }}>
                     <View>
-                        <Text style={{ paddingBottom: '3%', fontWeight: '600', fontSize: 17, fontFamily: 'serif' }}>
+                        <Text style={{ paddingBottom: '3%', fontWeight: '600', fontSize: 17}}>
                        Phone Number
                         </Text>
                         <View>
@@ -87,7 +87,8 @@ export default function SignInScreen({ navigation }) {
                         </View>
                     </View> */}
 
-                    <View>
+
+                    {/* <View>
                         <TouchableOpacity
                             style={{ right: wp('-25%'), top: hp('5%') }}
                             onPress={() => navigation.navigate("ForgetPassword")}
@@ -96,7 +97,7 @@ export default function SignInScreen({ navigation }) {
                                 Forget Password?
                             </Text>
                         </TouchableOpacity>
-                    </View>
+                    </View> */}
                 </View>
 
                 <View style={{ justifyContent: 'center', alignItems: 'center', top: hp('46%') }}>
@@ -115,7 +116,7 @@ export default function SignInScreen({ navigation }) {
                             top: hp('1%'),
                             fontSize: 18,
                             fontWeight: '500',
-                            fontFamily: 'serif'
+                            
                         }}>
                             Sign In
                         </Text>
@@ -125,7 +126,7 @@ export default function SignInScreen({ navigation }) {
                         onPress={() => navigation.navigate("SignUp")}
                         style={{ top: hp('2.2%') }}
                     >
-                        <Text style={{ fontSize: 18, fontWeight: '400', fontFamily: 'serif' }}>
+                        <Text style={{ fontSize: 18, fontWeight: '400' }}>
                             Don't have an account? <Text style={{ color: '#E3242B' }}>Sign Up</Text>
                         </Text>
                     </TouchableOpacity>

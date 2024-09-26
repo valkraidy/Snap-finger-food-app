@@ -24,21 +24,24 @@ const food = [
     title: "Apple smoothie",
     image: require('../smoothiesimages/apple.jpg'),
     price: '12',
-    description: 'A juicy hamburger with fresh lettuce and tomatoes.'
+    description: 'A juicy hamburger with fresh lettuce and tomatoes.',
+    quantity:1
   },
   {
     id: 2,
     title: "Vegetarian Pizza",
    image: require('../pizzaimages/vpizza.jpg'),
     price: '18',
-    description: 'Freshly grilled salmon with a hint of lemon.'
+    description: 'Freshly grilled salmon with a hint of lemon.',
+     quantity:1
   },
   {
     id: 3,
     title: "Pizza",
     image: require('../images/FRC.jpeg'),
     price: '15',
-    description: 'Delicious pizza with a variety of toppings.'
+    description: 'Delicious pizza with a variety of toppings.',
+     quantity:1
   },
   {
     id: 4,
@@ -74,7 +77,7 @@ export default function Home({ navigation }) {
    const handleAddToCart = () => {
       addToCart({ ...selectedFood, quantity });
     setModalVisible(false);
-    Alert.alert('Success🎉🎊', 'Your item is added to cart');
+    Alert.alert('Success🎉🎊', 'Your item has being added to cart');
   };
 
 //Handle selected food
@@ -175,6 +178,17 @@ export default function Home({ navigation }) {
               </TouchableOpacity>
             </View>
           </View>
+
+
+          <View style={{top:hp('4%')}}>
+          <Text style={{fontSize:20, fontSize: 22,
+           color: '#000',
+            fontWeight: '500',textAlign:'center'}}>Most Ordered</Text>
+          </View>
+
+
+
+
 
           <View style={styles.itemsContainer}>
             {food.map((item, index) => (
@@ -339,7 +353,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   categoriesText: {
-    fontSize: 25,
+    fontSize: 23,
     color: '#000',
     fontWeight: '500',
   },

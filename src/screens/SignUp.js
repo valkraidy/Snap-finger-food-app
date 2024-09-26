@@ -42,17 +42,17 @@ export default function SignUp({ navigation }) {
                 </TouchableOpacity>
 
                 <View style={{ top: hp('7%'), justifyContent: 'center', alignItems: 'center' }}>
-                    <Text style={{ fontFamily: 'serif', fontSize: 24, fontWeight: '700' }}>
+                    <Text style={{  fontSize: 24, fontWeight: '700' }}>
                         Getting Started
                     </Text>
-                    <Text style={{ fontFamily: 'serif', fontSize: 20, fontWeight: '400', color: 'black' }}>
+                    <Text style={{ fontSize: 20, fontWeight: '400', color: 'black' }}>
                         Let's create your account first.
                     </Text>
                 </View>
 
                 <View style={{ top: hp('20%'), alignItems: 'center' }}>
                     <View>
-                        <Text style={{ fontWeight: '600', marginTop: 15, fontSize: 17, fontFamily: 'serif' }}>
+                        <Text style={{ fontWeight: '600', marginTop: 15, fontSize: 17 }}>
                          Phone Number
                         </Text>
                         <View style={{ position: 'relative', marginTop: 10 }}>
@@ -84,7 +84,7 @@ export default function SignUp({ navigation }) {
                     </View>
 
                     <View style={{ marginTop: 10 }}>
-                        <Text style={{ paddingBottom: '2%', fontWeight: '600', fontSize: 17, fontFamily: 'serif' }}>
+                        <Text style={{ paddingBottom: '2%', fontWeight: '600', fontSize: 17}}>
                           Username
                         </Text>
                         <View>
@@ -130,7 +130,7 @@ export default function SignUp({ navigation }) {
                         }}
                     >
                         <Text style={{
-                            fontFamily: 'serif',
+                          
                             color: '#fff',
                             textAlign: 'center',
                             top: hp('1%'),
@@ -145,7 +145,7 @@ export default function SignUp({ navigation }) {
                         onPress={() => navigation.navigate("SignIn")}
                         style={{ top: hp('2.5%') }}
                     >
-                        <Text style={{ fontFamily: 'serif', fontSize: 18, fontWeight: '400' }}>
+                        <Text style={{ fontSize: 18, fontWeight: '400' }}>
                             Already have an account? <Text style={{ color: '#E3242B' }}>Sign In</Text>
                         </Text>
                     </TouchableOpacity>

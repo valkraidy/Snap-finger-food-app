@@ -22,11 +22,11 @@ export default function Welcome({navigation}) {
         top:hp('-30%')
         }}>
 
-          <Text style={{fontFamily:'serif',fontSize: hp('3.5%'),fontWeight:500,}}> Welcome to Snap finger
+          <Text style={{fontSize: hp('3.5%'),fontWeight:500,}}> Welcome to Snap finger
           </Text>
 
-          <Text style={{fontFamily:'serif',fontWeight:400,fontSize:hp('2.1%'),textAlign:'center',color:'black'}}> 
-          If you are new here sign up
+          <Text style={{fontWeight:400,fontSize:hp('2.1%'),textAlign:'center',color:'black'}}> 
+          If you are new here please sign up
       .</Text>
 
         </View> 
