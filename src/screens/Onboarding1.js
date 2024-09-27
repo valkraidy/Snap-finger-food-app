@@ -79,7 +79,7 @@ export default function Onboarding1({navigation}) {
    style={{width:wp('80%'),height:hp('33%')}}
       />,
       title: 'Hungry for Convinience?',
-      titleStyles:{fontSize:40,fontWeight:800},
+      titleStyles:{fontSize:hp('3.5%'),fontWeight:800},
       subtitle: 'Order now for speedy delivery.',
       subTitleStyles:{fontSize:20,color:'#000',fontWeight:400},
     },

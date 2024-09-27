@@ -39,7 +39,8 @@ export default function SignInScreen({ navigation }) {
                         </Text>
                         <View>
                             <Ionicons name="call-outline" size={20} color="#E3242B" style={{
-                                position: 'absolute', left: 10, top: hp('1.5%'), width: 25,
+                                position: 'absolute', left: 10, top: hp('1%'), 
+                                // width: 25,
                             }} />
                             <TextInput
                                 style={{
@@ -104,7 +105,7 @@ export default function SignInScreen({ navigation }) {
                     <TouchableOpacity
                         onPress={() => navigation.navigate("MyTabs")}
                         style={{
-                            height: hp('5%'),
+                            height: hp('5.5%'),
                             width: wp('80%'),
                             backgroundColor: '#E3242B',
                             borderRadius: 10

@@ -49,7 +49,7 @@ export default function Profile({navigation}) {
             style={{flexDirection:'row',justifyContent:'space-between'}}>
 
                 <Text style={{ 
-                    fontSize: 22,
+                     fontSize:hp('2%'),
                     fontWeight:400,
                     }}>Language</Text>
                     <Fontisto name="angle-right" size={18} color="gray" 
@@ -71,7 +71,7 @@ export default function Profile({navigation}) {
             style={{flexDirection:'row',justifyContent:'space-between'}}>
 
                 <Text style={{ 
-                    fontSize: 22,
+                    fontSize:hp('2%'),
                     fontWeight:400,
                     }}>My Profile</Text>
                     <Fontisto name="angle-right" size={18} color="gray" 
@@ -93,7 +93,7 @@ export default function Profile({navigation}) {
             style={{flexDirection:'row',justifyContent:'space-between'}}>
 
                 <Text style={{ 
-                    fontSize: 22,
+                   fontSize:hp('2%'),
                     fontWeight:400,
                     }}>Contact Us</Text>
                     <Fontisto name="angle-right" size={18} color="gray" 
@@ -115,7 +115,7 @@ export default function Profile({navigation}) {
             style={{flexDirection:'row',justifyContent:'space-between'}}>
 
                 <Text style={{ 
-                    fontSize: 22,
+                    fontSize:hp('2%'),
                     fontWeight:400,
                     }}>Change Password</Text>
                     <Fontisto name="angle-right" size={18} color="gray" 
@@ -137,7 +137,7 @@ export default function Profile({navigation}) {
             style={{flexDirection:'row',justifyContent:'space-between'}}>
 
                 <Text style={{ 
-                    fontSize: 22,
+                    fontSize:hp('2%'),
                     fontWeight:400,
                     }}>About Us</Text>
                     <Fontisto name="angle-right" size={18} color="gray" 
@@ -159,12 +159,12 @@ export default function Profile({navigation}) {
             style={{flexDirection:'row',justifyContent:'space-between'}}>
 
                 <Text style={{ 
-                    fontSize: 22,
+                    fontSize:hp('2%'),
                     fontWeight:400,
                     }}>Version</Text>
-                    <Fontisto name="angle-right" size={18} color="gray" 
-                style={{top:15}}
-                />
+                  
+
+                <Text>2.0.1</Text>
             </View>
             <View style={{
                 borderWidth:0.5,
@@ -189,7 +189,7 @@ export default function Profile({navigation}) {
           >
              <SimpleLineIcons name="logout" size={23} color="#E3242B" />
 
-          <Text style={{fontSize:20,}}>Log out</Text>
+          <Text style={{  fontSize:hp('2%'),}}>Log Out</Text>
           </TouchableOpacity>
         </View>
 
