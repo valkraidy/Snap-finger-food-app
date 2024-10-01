@@ -2,6 +2,7 @@ import { Text ,Image,View,TouchableOpacity} from 'react-native'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { StatusBar } from 'expo-status-bar'
 
+
 import React from 'react'
 export default function Welcome({navigation}) {
   return (

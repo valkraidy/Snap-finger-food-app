@@ -24,6 +24,7 @@ export default function App() {
     <CartProvider>
     <NavigationContainer>
       <Stack.Navigator>
+         <Stack.Screen name="MyTabs" component={MyTabs} options={{ headerShown: false }} />
          <Stack.Screen name="Onboarding1" component={Onboarding1} options={{ headerShown: false }} />
         {/* <Stack.Screen name="OnboardingOne" component={OnboardingOne} options={{ headerShown: false }} /> */}
         {/* <Stack.Screen name="OnboardingTwo" component={OnboardingTwo} options={{ headerShown: false }} />
@@ -32,7 +33,7 @@ export default function App() {
         <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown: false }} />
         <Stack.Screen name="VerifyOTP" component={VerifyOTP} options={{ headerShown: false }} />
         <Stack.Screen name="SignIn" component={SignIn} options={{ headerShown: false }} />
-        <Stack.Screen name="MyTabs" component={MyTabs} options={{ headerShown: false }} />
+        {/* <Stack.Screen name="MyTabs" component={MyTabs} options={{ headerShown: false }} /> */}
         <Stack.Screen name="ForgetPassword" component={ForgetPassword} options={{ headerShown: false }} />
         <Stack.Screen name="Drinks" component={Drinks} options={{ headerShown: false }} />
         <Stack.Screen name="Pizzas" component={Pizzas} options={{ headerShown: false }} />

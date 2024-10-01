@@ -48,7 +48,9 @@ export default function MyTabs() {
       <Tab.Screen name="Home" component={Home} options={{ headerShown: false, tabBarHideOnKeyboard: false }} />
       <Tab.Screen name="Meals" component={Meals} options={{ headerShown: false }} />
       <Tab.Screen name="Cart" component={Cart} options={{ headerShown: false }} />
-      <Tab.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
+      <Tab.Screen name="Profile" component={Profile} 
+      
+       />
     </Tab.Navigator>
   );
 }
