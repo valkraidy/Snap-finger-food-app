@@ -8,9 +8,9 @@ import Feather from '@expo/vector-icons/Feather';
 import Entypo from '@expo/vector-icons/Entypo';
 import EvilIcons from '@expo/vector-icons/EvilIcons';
 import Octicons from '@expo/vector-icons/Octicons';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 export default function Profile({navigation}) {
-
   return (
 
     <>
@@ -47,25 +47,25 @@ export default function Profile({navigation}) {
 {/* LIST */}
         <View style={{ marginTop:hp('8%'),}}   >
               
-            <View 
-            style={{flexDirection:'row',justifyContent:'space-between'}}>
+           <TouchableOpacity>
+                <View 
+                 style={{flexDirection:'row',justifyContent:'space-between'}}>
 
-              <View style={{}}>
-                 <Text style={{top:hp('2.3%')}}>
-                         <Ionicons name="notifications-outline" size={20} color="#E3242B"
-                        
-                        />
-                 </Text>
-                 <Text style={{ 
-                     fontSize:hp('1.6%'),
-                    fontWeight:400,
-                    left:wp('7%')
-                    }}>
-                          Notifications
-                    </Text>
-               </View>  
+                    <View style={{}}>
+                            <Text style={{top:hp('2.3%')}}>
+                                    <Ionicons name="notifications-outline" size={20} color="#E3242B" />
+                            </Text>
+                            <Text style={{ 
+                                fontSize:hp('1.6%'),
+                                fontWeight:400,
+                                left:wp('7%')
+                                }}>
+                                    Notifications
+                                </Text>
+                    </View>  
                     <Fontisto name="angle-right" size={10} color="gray" style={{top:hp('2.8%')}}/>
-            </View>
+                </View>
+           </TouchableOpacity>
 
             <View
                  style={{
@@ -80,14 +80,17 @@ export default function Profile({navigation}) {
 
         <View style={{ marginTop:hp('0%'),}}   >
                     
-                    <View 
-                    style={{flexDirection:'row',justifyContent:'space-between'}}>
+           <TouchableOpacity
+           onPress={()=>navigation.navigate('ContactUs')}
+           >
+                 <View 
+                     style={{flexDirection:'row',justifyContent:'space-between'}}>
                         <View>
-                                 <Text style={{top:hp('2.3%')}}>
+                                <Text style={{top:hp('2.3%')}}>
                                          <Feather name="phone-call" size={20} color="#E3242B" />
                                                  
                                 </Text>
-                                            <Text style={{ 
+                                <Text style={{ 
                                 fontSize:hp('1.6%'),
                                 fontWeight:400,
                                 left:wp('7%')
@@ -95,9 +98,11 @@ export default function Profile({navigation}) {
                         </View>
 
                       <Fontisto name="angle-right" size={10} color="gray" 
-                style={{top:20}}
+                   style={{top:20}}
                 />
             </View>
+           </TouchableOpacity>
+
             <View style={{
                 borderWidth:0.3,
                 borderColor:'#D3D3D3',
@@ -130,50 +135,64 @@ export default function Profile({navigation}) {
             </View>
         </View> */}
 
-        {/* <View style={{ marginTop:hp('2%'),}}   >
-              
-            <View 
-            style={{flexDirection:'row',justifyContent:'space-between'}}>
+        <View style={{ marginTop:hp('0%'),}}> 
+           <TouchableOpacity>
 
-                <Text style={{ 
+                 <View 
+                     style={{flexDirection:'row',justifyContent:'space-between'}}>
+
+                <View>
+                    <Text style={{top:hp('2.3%')}}>
+                        <FontAwesome name="language" size={20} color="#E3242B" />
+                    </Text>
+
+                     <Text style={{ 
                     fontSize:hp('1.6%'),
                     fontWeight:400,
-                    }}>Change Password</Text>
+                    left:wp('7%')
+                    }}>Language</Text>
+                </View>
+
                     <Fontisto name="angle-right" size={10} color="gray" 
-                style={{top:15}}
+                style={{top:20}}
                 />
             </View>
+
+           </TouchableOpacity>
+
+
             <View style={{
-                borderWidth:0.5,
+                borderWidth:0.3,
                 borderColor:'#D3D3D3',
                 marginTop:hp('2%'),
              }}>
             
             </View>
-        </View> */}
+        </View>
 
         <View style={{ marginTop:hp('0%'),}}   >
               
-            <View 
-            style={{flexDirection:'row',justifyContent:'space-between'}}>
+           <TouchableOpacity>
+               <View 
+                 style={{flexDirection:'row',justifyContent:'space-between'}}>
 
-                <View>
-                  <Text style={{top:hp('2.3%')}}>
-                                       <Feather name="users" size={20} color="#E3242B" />
-                                                 
-                                </Text>
-                    <Text style={{ 
-                    fontSize:hp('1.6%'),
-                    fontWeight:400,
-                    left:wp('7%')
-                    }}>About Us</Text>
-
-                </View>
+                    <View>
+                        <Text style={{top:hp('2.3%')}}>
+                            <Feather name="users" size={20} color="#E3242B" />                         
+                        </Text>
+                        <Text style={{ 
+                        fontSize:hp('1.6%'),
+                        fontWeight:400,
+                        left:wp('7%')
+                        }}>About Us</Text>
+                    </View>
 
                     <Fontisto name="angle-right" size={10} color="gray" 
                      style={{top:20}}
                     />
-            </View>
+                </View>
+            
+           </TouchableOpacity>
             <View style={{
                 borderWidth:0.3,
                 borderColor:'#D3D3D3',
@@ -185,72 +204,63 @@ export default function Profile({navigation}) {
 
           <View style={{ marginTop:hp('0%'),}}   >
               
-            <View 
-            style={{flexDirection:'row',justifyContent:'space-between'}}>
+                <TouchableOpacity>
+                    <View 
+                        style={{flexDirection:'row',justifyContent:'space-between'}}>
+                            <View>
+                                    <Text style={{top:hp('2.3%')}}>
+                                        <Ionicons name="location-outline" size={24} color="#E3242B" />
+                                    </Text>
 
-                <View>
-                     <Text style={{top:hp('2.3%')}}>
+                                    <Text style={{ 
+                                    fontSize:hp('1.6%'),
+                                    fontWeight:400,
+                                    left:wp('7%')
+                                    }}>Locate Us</Text>
+                            </View>
 
-                   <Ionicons name="location-outline" size={24} color="#E3242B" />
-                </Text>
+                            <Fontisto name="angle-right" size={10} color="gray" 
+                        style={{top:20}}
+                        />
+                    </View>
+                </TouchableOpacity>
 
-                <Text style={{ 
-                    fontSize:hp('1.6%'),
-                    fontWeight:400,
-                    left:wp('7%')
-                    }}>Locate Us</Text>
-                </View>
-
-                    <Fontisto name="angle-right" size={10} color="gray" 
-                style={{top:20}}
-                />
-
-            </View>
             <View style={{
                 borderWidth:0.3,
                 borderColor:'#D3D3D3',
                 marginTop:hp('2%'),
              }}>
-            
             </View>
         </View>
 
 
-        <   TouchableOpacity>
-         <View style={{ marginTop:hp('0%'),}}   >
-              
-            <View 
-            style={{flexDirection:'row',justifyContent:'space-between'}}>
+        <TouchableOpacity>
+            <View style={{ marginTop:hp('0%'),}}   >
+                
+                <View 
+                     style={{flexDirection:'row',justifyContent:'space-between'}}>
+                    <View>
+                            <Text style={{top:hp('2.3%')}}>
+                                 <Octicons name="versions" size={20} color="#E3242B" />
+                            </Text>
 
-                <View>
-                     <Text style={{top:hp('2.3%')}}>
-                    <Octicons name="versions" size={20} color="#E3242B" />
-                </Text>
-
-                <Text style={{ 
-                    fontSize:hp('1.6%'),
-                    fontWeight:400,
-                    left:wp('7%')
-                    }}>Version</Text>
-                  
+                           <Text style={{ 
+                            fontSize:hp('1.6%'),
+                            fontWeight:400,
+                            left:wp('7%')
+                            }}>Version</Text>
+                    
+                    </View>
+                    <Text style={{color:'',top:hp('2.5%')}}>2.0.1</Text>
                 </View>
-
-               
-
-                <Text style={{color:'',top:hp('2.5%')}}>2.0.1</Text>
+                <View style={{
+                    borderWidth:0.3,
+                    borderColor:'#D3D3D3',
+                    marginTop:hp('2%'),
+                }}>
+                
+                </View>
             </View>
-            <View style={{
-                borderWidth:0.3,
-                borderColor:'#D3D3D3',
-                marginTop:hp('2%'),
-             }}>
-            
-            </View>
-        </View>
-        
-        
-        
-        
          </TouchableOpacity>
          
 
@@ -264,7 +274,6 @@ export default function Profile({navigation}) {
 
 <View style={{justifyContent:'center',alignItems:'center',
          top: hp('20%'),
-        //  flexDirection:'row',
         gap:20
         }}>
 
