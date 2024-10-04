@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity,Linking } from 'react-native'
 import React from 'react'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { Fontisto } from '@expo/vector-icons';
@@ -7,6 +7,29 @@ import Feather from '@expo/vector-icons/Feather';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 export default function Profile({navigation}) {
+
+ const phoneNumber = '0241482993';  
+  const websiteUrl = 'https://google.com'; 
+  const emailAddress = 'valkraidy@gmail.com'
+
+  // Function to open phone dialer with the number
+  const handlePhonePress = () => {
+    Linking.openURL(`tel:${phoneNumber}`);
+  };
+
+  // Function to open the website in the browser
+  const handleWebsitePress = () => {
+    Linking.openURL(websiteUrl);
+  };
+
+  const handleEmailPress = () =>{
+    Linking.openURL(`mailto:info@yourdomain.com`)
+  }
+
+
+
+
+
   return (
     <>
     <View style={{ top:hp('2%'),padding:20}}>
@@ -24,7 +47,7 @@ export default function Profile({navigation}) {
 {/* LIST */}
         <View style={{ marginTop:hp('0%'),}}   >
               
-           <TouchableOpacity>
+           <>
                 <View 
                  style={{flexDirection:'row',justifyContent:'space-between'}}>
                     <View style={{}}>
@@ -35,17 +58,18 @@ export default function Profile({navigation}) {
                                 fontWeight:700
                                 }}>
                                     Talk To Us Today...
-                            </Text>
-                               
+                            </Text>  
                     </View>  
                 </View>
-           </TouchableOpacity>
+           </>
         </View>
 
 
         <View style={{ marginTop:hp('1%'),}}   >
                     
-           <TouchableOpacity>
+           <TouchableOpacity 
+           onPress={handlePhonePress}
+           >
                  <View 
                      style={{flexDirection:'row',justifyContent:'space-between'}}>
                         <View>
@@ -79,7 +103,10 @@ export default function Profile({navigation}) {
        
 
         <View style={{ marginTop:hp('0%'),}}> 
-           <TouchableOpacity>
+           <TouchableOpacity
+      
+           onPress = {handleEmailPress} 
+           >
                  <View 
                      style={{flexDirection:'row',justifyContent:'space-between'}}>
                         <View>
@@ -112,7 +139,9 @@ export default function Profile({navigation}) {
 
         <View style={{ marginTop:hp('0%'),}}   >
               
-           <TouchableOpacity>
+           <TouchableOpacity
+                onPress={handleWebsitePress} 
+           >
                  <View 
                      style={{flexDirection:'row',justifyContent:'space-between'}}>
                         <View>

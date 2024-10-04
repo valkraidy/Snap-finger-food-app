@@ -17,6 +17,8 @@ import Drinks from './src/screens/Drinks';
 import Foods from './src/screens/Foods';
 import Modal from './src/screens/Modal';
 import ContactUs from './src/profilescreens/ContactUs';
+import AboutUs from './src/profilescreens/AboutUs';
+import LocateUs from './src/profilescreens/LocateUs'
 
 const Stack = createNativeStackNavigator();
 
@@ -42,6 +44,8 @@ export default function App() {
         <Stack.Screen name="Foods" component={Foods} options={{ headerShown: false }} />
         <Stack.Screen name="Modal" component={Modal} options={{ headerShown: false }} />
         <Stack.Screen name="ContactUs" component={ContactUs} options={{ headerShown: false }} />
+        <Stack.Screen name="AboutUs" component={AboutUs} options={{ headerShown: false}} />
+        <Stack.Screen name="LocateUs" component={LocateUs} options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
     </CartProvider>

@@ -9,6 +9,7 @@ import Entypo from '@expo/vector-icons/Entypo';
 import EvilIcons from '@expo/vector-icons/EvilIcons';
 import Octicons from '@expo/vector-icons/Octicons';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 export default function Profile({navigation}) {
   return (
@@ -29,7 +30,7 @@ export default function Profile({navigation}) {
        top:hp('2%')
       }}>
         <Image
-        source={require('../images/profile.png')}
+        source={require('../images/Snapsplash.png')}
         style={{  borderRadius: 100,
         height: 70,
         width: 70,}}
@@ -95,6 +96,7 @@ export default function Profile({navigation}) {
                                 fontWeight:400,
                                 left:wp('7%')
                                 }}>Contact Us</Text>
+                               
                         </View>
 
                       <Fontisto name="angle-right" size={10} color="gray" 
@@ -113,19 +115,31 @@ export default function Profile({navigation}) {
             </View>
         </View>
 
-        {/* <View style={{ marginTop:hp('2%'),}}   >
+        <View style={{ marginTop:hp('0%'),}}   >
               
-            <View 
-            style={{flexDirection:'row',justifyContent:'space-between'}}>
+            <TouchableOpacity
+           
+           >
+                 <View 
+                     style={{flexDirection:'row',justifyContent:'space-between'}}>
+                        <View>
+                                <Text style={{top:hp('2.3%')}}>
+                                        <MaterialCommunityIcons name="theme-light-dark" size={24} color="#E3242B" />
+                                                 
+                                </Text>
+                                <Text style={{ 
+                                fontSize:hp('1.6%'),
+                                fontWeight:400,
+                                left:wp('7%')
+                                }}>Theme </Text>
+                        </View>
 
-                <Text style={{ 
-                   fontSize:hp('1.6%'),
-                    fontWeight:400,
-                    }}>Contact Us</Text>
-                    <Fontisto name="angle-right" size={10} color="gray" 
-                style={{top:15}}
-                />
+                  <Entypo name="switch" size={24} color="black" style={{top:hp('2%')}}/>
+                 
+                
             </View>
+           </TouchableOpacity>
+
             <View style={{
                 borderWidth:0.5,
                 borderColor:'#D3D3D3',
@@ -133,7 +147,7 @@ export default function Profile({navigation}) {
              }}>
             
             </View>
-        </View> */}
+        </View>
 
         <View style={{ marginTop:hp('0%'),}}> 
            <TouchableOpacity>
@@ -172,7 +186,9 @@ export default function Profile({navigation}) {
 
         <View style={{ marginTop:hp('0%'),}}   >
               
-           <TouchableOpacity>
+           <TouchableOpacity
+           onPress={()=> navigation.navigate('AboutUs')}
+           >
                <View 
                  style={{flexDirection:'row',justifyContent:'space-between'}}>
 
@@ -204,7 +220,9 @@ export default function Profile({navigation}) {
 
           <View style={{ marginTop:hp('0%'),}}   >
               
-                <TouchableOpacity>
+                <TouchableOpacity
+                onPress={()=>navigation.navigate('LocateUs')}
+                >
                     <View 
                         style={{flexDirection:'row',justifyContent:'space-between'}}>
                             <View>
@@ -273,7 +291,7 @@ export default function Profile({navigation}) {
 {/* logout */}
 
 <View style={{justifyContent:'center',alignItems:'center',
-         top: hp('20%'),
+         top: hp('15%'),
         gap:20
         }}>
 
