@@ -23,23 +23,9 @@
         "backgroundColor": "#ffffff"
       }
     },
-    
-  "expo": {
-    "android": {
-      "config": {
-        "googleMaps": {
-          "apiKey": "YOUR_GOOGLE_MAPS_API_KEY"
-        }
-      }
-    },
-    "ios": {
-      "config": {
-        "googleMapsApiKey": "YOUR_GOOGLE_MAPS_API_KEY"
-      }
-    }
-  },
-    "web": {
-      "favicon": "./images/Welcome.png"
-    }
+     "web": {
+            "favicon": "./images/Welcome.png"
+          }
+       
   }
-}
+ }
